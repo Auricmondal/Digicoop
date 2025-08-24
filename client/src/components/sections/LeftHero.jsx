@@ -21,7 +21,7 @@ export default function LeftSection() {
         Audit-Ready Documentation — With One Simple, Compliant Platform.
       </p>
 
-      <div className="flex gap-4 mt-4 mb-20">
+      <div className="flex gap-4 mt-4 mb-20 flex-col md:flex-row w-full md:w-auto">
         <ButtonFlippedReveal
           icon={<ArrowRight />}
           hoverIcon={
