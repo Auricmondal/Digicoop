@@ -38,13 +38,15 @@ const HowThisWorks = () => {
 
       <div className="max-w-[1460px] mx-auto">
         {/* Section Header */}
-        <div className="text-center mb-14">
+        <div className="flex flex-col justify-center text-center gap-4">
           {/* Pill with gradient border */}
-          <GradientBadge text={"How This Works"} />
+          <span>
+            <GradientBadge text={"How This Works"} />
+          </span>
 
           {/* Header content container with responsive sizing */}
           <div className="w-full max-w-[90%] sm:max-w-[600px] lg:max-w-[724px] h-auto lg:h-[168px] mx-auto flex flex-col justify-center gap-2 lg:gap-[10px] opacity-100">
-            <h2 className="text-[1.5rem] sm:text-[2rem] lg:text-[2.5rem] font-semibold leading-[1.1] tracking-[-0.01em] text-primary-dark mb-4">
+            <h2 className="text-[1.5rem] sm:text-[2rem] lg:text-[2.5rem] font-semibold leading-[1.1] tracking-[-0.01em] text-primary-dark mb-4 ">
               {/* ^ Primary Dark #001F52 */}
               From Chaos to{" "}
               <span className="text-[1.5rem] sm:text-[2rem] lg:text-[2.5rem] font-semibold leading-[1.1] tracking-[-0.01em] bg-gradient-to-r from-primary to-dark-tint bg-clip-text text-transparent">
