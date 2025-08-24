@@ -2,6 +2,7 @@ import Hero from "../components/sections/Hero";
 import Brands from "../components/sections/Brands";
 import OurSolutions from "../components/sections/OurSolutions";
 import HowThisWorks from "../components/sections/HowThisWorks";
+import FAQSection from "../components/sections/FAQ";
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
       <Brands />
       <OurSolutions />
       <HowThisWorks />
+      <FAQSection />
     </div>
   );
 }
