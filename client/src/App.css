@@ -24,11 +24,9 @@
   .tint-border-gradient {
     border-width: 1px;
     border-style: solid;
-    border-image-source: linear-gradient(
-      90deg,
-      rgba(var(--color-dark-tint), 0.25),
-      rgba(var(--color-tint), 0.25)
-    );
+    border-image-source: linear-gradient(90deg,
+        rgba(var(--color-dark-tint), 0.25),
+        rgba(var(--color-tint), 0.25));
     border-image-slice: 1;
   }
 }
@@ -42,6 +40,7 @@ body {
     opacity: 0;
     transform: translateY(20px);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0);
