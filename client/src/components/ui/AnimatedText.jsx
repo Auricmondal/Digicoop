@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 export default function AnimatedText(
   texts = [],
   gradient = "from-primary to-dark-tint",
-  className = "text-[64px] font-bold"
+  className = ""
 ) {
   //* words through props not working
 
@@ -20,17 +20,15 @@ export default function AnimatedText(
   }, []);
   return (
     <div className={`inline-block ${className}`}>
-      <h1>
-        <span
-          key={animateKey}
-          className={`inline-block bg-clip-text text-transparent bg-gradient-to-r ${gradient} text-4xl md:text-5xl lg:text-7xl font-semibold`}
-          style={{
-            animation: "slide-up-fade 0.9s ease-in-out",
-          }}
-        >
-          {words[index]}
-        </span>
-      </h1>
+      <span
+        key={animateKey}
+        className={`inline-block bg-clip-text text-transparent bg-gradient-to-r ${gradient} text-4xl md:text-5xl lg:text-7xl font-semibold`}
+        style={{
+          animation: "slide-up-fade 0.9s ease-in-out",
+        }}
+      >
+        {words[index]}
+      </span>
     </div>
   );
 }
