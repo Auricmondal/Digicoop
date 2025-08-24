@@ -4,18 +4,18 @@ import { ArrowRight, ArrowUpRight } from "lucide-react";
 
 export function SolutionCard({ image, title, subtitle, buttontext }) {
   return (
-    <div className="bg-[#EAF2FF] border border-gray-300 rounded-xl">
+    <div className="bg-[#EAF2FF] border-2 border-gray-200 rounded-xl group/card">
       {/* Image Section */}
-      <div className="rounded-t-lg h-100 overflow-hidden">
+      <div className="rounded-t-lg h-90 overflow-hidden">
         <div
-          className="bg-cover bg-no-repeat h-120 w-150 rounded-lg transform translate-y-[4%] translate-x-[15%] hover:transform hover:scale-115 hover:translate-x-[9%] ease-in-out duration-500"
+          className="bg-cover bg-no-repeat h-200 w-250 rounded-lg transform translate-y-[4%] translate-x-[15%] group-hover/card:transform group-hover/card:scale-115 group-hover/card:translate-x-[9%] ease-in-out duration-500"
           style={{ backgroundImage: `url(${image})` }}
         />
         <div />
       </div>
 
       {/* Content Section */}
-      <div className="bg-white rounded-b-xl p-6 hover:shadow-lg">
+      <div className="bg-white rounded-b-xl p-6 hover:shadow-lg ease-in-out duration-500">
         <h3 className="m-1">{title}</h3>
         <p className="m-1">{subtitle}</p>
         <div className="">
