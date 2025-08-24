@@ -47,7 +47,7 @@ export default function Footer() {
           </div>
 
           {/* Links Section */}
-          <div className="flex flex-col sm:flex-row sm:gap-16 md:w-2/3 justify-center md:justify-end text-[#416dae]">
+          <div className="flex flex-col sm:flex-row sm:gap-16 md:w-2/3 justify-center md:justify-end text-[#416dae] text-base">
             <div className="mb-6 md:mb-0">
               <h3 className="font-semibold mb-2">Product</h3>
               <ul className="space-y-1">
