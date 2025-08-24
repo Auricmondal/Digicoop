@@ -7,9 +7,9 @@ const DemoCard = ({ subsection, index, isReversed }) => {
     // 1st and 3rd (index 0, 2) - Blue gradient
     // 2nd and 4th (index 1, 3) - Light blue background
     if (index % 2 === 0) {
-      return "bg-[rgba(168,201,255,1)]"; // Blue gradient for 1st, 3rd
+      return "bg-md-tint"; // Blue gradient for 1st, 3rd
     } else {
-      return "bg-[rgba(70,127,253,1)]"; // Light blue background for 2nd, 4th
+      return "bg-dark-tint"; // Light blue background for 2nd, 4th
     }
   };
 
@@ -19,12 +19,12 @@ const DemoCard = ({ subsection, index, isReversed }) => {
                   <div className="w-full lg:w-[389px] h-auto lg:h-[320px] flex flex-col justify-center gap-6 py-6 opacity-100 text-center lg:text-left order-1 lg:order-none"
                   >
                     {/* H3 Title */}
-                    <h3 className="text-[1.125rem] sm:text-[1.375rem] lg:text-[1.75rem] font-semibold leading-[1.25] tracking-[0em] text-center lg:text-left text-black font-['DM Sans']">
+                    <h3 className="text-[1.125rem] sm:text-[1.375rem] lg:text-[1.75rem] font-semibold leading-[1.25] tracking-[0em] text-center lg:text-left text-black ">
                       {subsection.title}
                     </h3>
 
                     {/* Body text */}
-                    <p className="text-[1rem] lg:text-[1.125rem] font-normal leading-[1.6] tracking-[0em] text-center lg:text-left text-black font-['DM Sans']">
+                    <p className="text-[1rem] lg:text-[1.125rem] font-normal leading-[1.6] tracking-[0em] text-center lg:text-left text-black ">
                       {subsection.description}
                     </p>
 
