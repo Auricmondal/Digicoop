@@ -2,7 +2,7 @@ import React from "react";
 import HowThisWorks1 from "../../assets/images/HowThisWorks1.webp";
 import DemoCard from "../ui/DemoCard";
 import { GradientBadge } from "../ui/Badges";
-
+import SectionWrapper from "../../layouts/SectionWrapper";
 
 const HowThisWorks = () => {
   const subsections = [
@@ -33,7 +33,7 @@ const HowThisWorks = () => {
   ];
 
   return (
-    <section className="bg-tint px-4 sm:px-8 lg:px-12 py-6 sm:py-12 lg:py-16">
+    <SectionWrapper className="bg-tint">
       {/* ^ background uses Tint #EAF2FF */}
 
       <div className="max-w-7xl mx-auto">
@@ -79,7 +79,7 @@ const HowThisWorks = () => {
           ))}
         </div>
       </div>
-    </section>
+    </SectionWrapper>
   );
 };
 
