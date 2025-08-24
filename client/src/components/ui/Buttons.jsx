@@ -10,10 +10,10 @@ export function ButtonFlippedReveal({ className, children, icon, hoverIcon }) {
       }}
     >
       <span className="relative block overflow-hidden text-[20px]">
-        <span className="flex transform transition-transform duration-300 group-hover:-translate-y-full">
+        <span className="flex transform transition-transform duration-300 group-hover:-translate-y-full text-[15px] md:text-[20px]">
           {children}
         </span>
-        <span className="flex absolute left-0 top-0 transform translate-y-full transition-transform duration-300 group-hover:translate-y-0 rotate-180">
+        <span className="flex absolute left-0 top-0 transform translate-y-full transition-transform duration-300 group-hover:translate-y-0">
           {children}
         </span>
       </span>
@@ -32,7 +32,7 @@ export function ButtonFlippedReveal({ className, children, icon, hoverIcon }) {
 export function ButtonOutlineHoverSolid({ className, children }) {
   return (
     <button
-      className={`border-2 border-dark-tint text-dark-tint hover:text-white hover:bg-dark-tint ${className} bg-transparent text-[20px]`}
+      className={`border-2 border-dark-tint text-dark-tint hover:text-white hover:bg-dark-tint ${className} bg-transparent text-[15px] md:text-[20px]`}
     >
       {children}
     </button>
