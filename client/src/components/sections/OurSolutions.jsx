@@ -2,6 +2,7 @@ import React from "react";
 import { SolutionCard } from "../ui/Cards";
 import { GradientBadge } from "../ui/Badges";
 import SolutionsImage from "../../assets/images/solutions.webp";
+import SectionWrapper from "../../layouts/SectionWrapper";
 
 const OurSolutions = () => {
   const solutions = [
@@ -22,13 +23,13 @@ const OurSolutions = () => {
   ];
 
   return (
-    <div className="py-6 px-6">
+    <SectionWrapper className="max-w-[1460px] mx-auto">
       {/*Parent Background*/}
       <div className="flex flex-col items-center gap-4">
         <GradientBadge text="Our Solutions" />
 
         {/* Title */}
-        <h2 className="flex flex-col items-center justify-center text-center">
+        <h2 className="flex flex-col items-center justify-center text-center text-4xl md:text-5xl font-semibold leading-[1.1] tracking-normal">
           Smarter Tools for Stronger <br />
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-dark-tint font-semibold">
             Cooperatives
@@ -36,7 +37,7 @@ const OurSolutions = () => {
         </h2>
 
         {/* Subtitle */}
-        <p className="text-center">
+        <p className="mt-4 text-md md:text-lg max-w-2xl text-gray-400 text-center">
           Practical, compliant, and easy to use - our tools give cooperatives
           the clarity and control they need.
         </p>
@@ -54,7 +55,7 @@ const OurSolutions = () => {
           />
         ))}
       </div>
-    </div>
+    </SectionWrapper>
   );
 };
 export default OurSolutions;

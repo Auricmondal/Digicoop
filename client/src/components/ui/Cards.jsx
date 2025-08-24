@@ -16,9 +16,9 @@ export function SolutionCard({ image, title, subtitle, buttontext }) {
 
       {/* Content Section */}
       <div className="bg-white rounded-b-xl p-6 hover:shadow-lg ease-in-out duration-500">
-        <h3 className="m-1">{title}</h3>
-        <p className="m-1">{subtitle}</p>
-        <div className="">
+        <h3 className="text-2xl md:text-4xl font-semibold leading-tight">{title}</h3>
+        <p className="mt-4 mb-2 text-md md:text-lg max-w-2xl text-gray-400">{subtitle}</p>
+        <div>
           <ButtonFlippedReveal
             icon={<ArrowRight />}
             hoverIcon={
