@@ -23,9 +23,9 @@ const OurSolutions = () => {
   ];
 
   return (
-    <SectionWrapper className="max-w-[1460px] mx-auto">
+    <SectionWrapper className="">
       {/*Parent Background*/}
-      <div className="flex flex-col items-center gap-4">
+      <div className="flex flex-col items-center gap-4 max-w-[1460px] mx-auto">
         <GradientBadge text="Our Solutions" />
 
         {/* Title */}
@@ -44,7 +44,7 @@ const OurSolutions = () => {
       </div>
 
       {/* Responsive Grid*/}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-4 md:mx-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-4 ">
         {solutions.map((solution, index) => (
           <SolutionCard
             key={index}
