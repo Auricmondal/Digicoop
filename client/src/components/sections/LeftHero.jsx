@@ -10,7 +10,7 @@ import { Mouse, ArrowRight, ArrowUpRight } from "lucide-react";
 export default function LeftSection() {
   return (
     <div className="h-full flex flex-col gap-6 text-center items-center md:text-start  justify-center md:items-start">
-      <GradientBadge text={"Built for Corporatives"} />
+      <GradientBadge text={"Built For Cooperatives"} />
 
       <h1 className="text-4xl md:text-5xl lg:text-7xl font-semibold">
         Powering Cooperative Digital <AnimatedText />
