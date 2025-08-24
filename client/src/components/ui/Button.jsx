@@ -1,53 +1,40 @@
-import { motion, AnimatePresence } from "motion/react";
-import { useState } from "react";
 import React from "react";
 
-export function ButtonFlippedReveal({ text }) {
-  const [hovered, setHovered] = useState(false);
-
+export function ButtonFlippedReveal({ className, children, icon, hoverIcon }) {
   return (
     <button
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-      className="border-[2px] flex items-center justify-center bg-primary text-white relative border-transparent rounded-2xl w-[154px] h-[58px] m-0"
+      className={`group cursor-pointer ${className}`}
       style={{
         borderImage:
           "linear-gradient(93.63deg, rgba(255, 255, 255, 0.35) 3.45%, rgba(153, 153, 153, 0) 117.37%) 1",
       }}
     >
-      <AnimatePresence mode="wait">
-        {!hovered ? (
-          <motion.span
-            key="normal"
-            initial={{ y: 0, opacity: 1 }}
-            animate={{ y: 0, opacity: 1 }}
-            exit={{ y: 20, opacity: 0 }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="absolute"
-          >
-            {text}
-          </motion.span>
-        ) : (
-          <motion.span
-            key="flipped"
-            initial={{ y: -20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            exit={{ y: -20, opacity: 0 }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="absolute rotate-180"
-          >
-            {text}
-          </motion.span>
-        )}
-      </AnimatePresence>
+      <span className="relative block overflow-hidden text-[20px]">
+        <span className="flex transform transition-transform duration-300 group-hover:-translate-y-full">
+          {children}
+        </span>
+        <span className="flex absolute left-0 top-0 transform translate-y-full transition-transform duration-300 group-hover:translate-y-0 rotate-180">
+          {children}
+        </span>
+      </span>
+        <span className="relative w-5 h-5">
+        <span className="absolute inset-0 transform transition-opacity duration-300 group-hover:opacity-0">
+          {icon}
+        </span>
+        <span className="absolute inset-0 transform opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+          {hoverIcon}
+        </span>
+      </span>
     </button>
   );
 }
 
-export function ButtonOutlineHoverSolid({ text }) {
+export function ButtonOutlineHoverSolid({ className, children }) {
   return (
-    <button className="border-2 border-dark-tint text-dark-tint hover:text-white hover:bg-dark-tint w-[154px] h-[58px] rounded-2xl bg-transparent ">
-      {text}
+    <button
+      className={`border-2 border-dark-tint text-dark-tint hover:text-white hover:bg-dark-tint ${className} bg-transparent text-[20px]`}
+    >
+      {children}
     </button>
   );
 }

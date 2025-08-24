@@ -4,11 +4,13 @@ import RightSection from "./RightHero";
 
 const Hero = () => {
   return (
-    <div className="md:flex min-h-[95vh] mx-auto">
-      <div className="flex-1 flex items-center justify-center px-12">
+    <div className="md:grid grid-cols-7 min-h-[95vh] mx-auto">
+      <div className="col-span-4 h-full px-12">
         <LeftSection />
       </div>
-      <RightSection />
+      <div className="col-span-3 h-full">
+        <RightSection />
+      </div>
     </div>
   );
 };

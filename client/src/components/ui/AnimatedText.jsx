@@ -14,7 +14,7 @@ export default function AnimatedText(
     const interval = setInterval(() => {
       setIndex((prev) => (prev + 1) % words.length);
       setAnimateKey((prev) => prev + 1);
-    }, 1000);
+    }, 2000);
 
     return () => clearInterval(interval);
   }, []);
