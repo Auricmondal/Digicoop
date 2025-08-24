@@ -1,6 +1,6 @@
 import React from "react";
-import { GradientBadge } from "../ui/Badge";
-import { ButtonFlippedReveal, ButtonOutlineHoverSolid } from "../ui/Button";
+import { GradientBadge } from "../ui/Badges.jsx";
+import { ButtonFlippedReveal, ButtonOutlineHoverSolid } from "../ui/Buttons.jsx";
 import AnimatedText from "../ui/AnimatedText.jsx";
 import { Mouse, ArrowRight, ArrowUpRight } from "lucide-react";
 
