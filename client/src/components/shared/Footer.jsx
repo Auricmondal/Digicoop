@@ -9,7 +9,7 @@ export default function Footer() {
   return (
     <SectionWrapper className="bg-tint">
     <footer className="text-primary-dark max-w-[1460px] mx-auto">
-      <div className="max-w-6xl mx-auto flex flex-col items-center gap-6 md:items-start md:gap-10">
+      <div className=" mx-auto flex flex-col items-center gap-6 md:items-start md:gap-10">
         {/* Top Section (Logo + Socials) */}
         <div className="flex flex-col items-center md:items-start">
           <h2 className="md:text-8xl text-6xl font-bold">DigiCoop</h2>
