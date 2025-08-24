@@ -1,17 +1,16 @@
-import React from "react";
 import LeftSection from "./LeftHero";
 import RightSection from "./RightHero";
 import SectionWrapper from "../../layouts/SectionWrapper";
 
 const Hero = () => {
   return (
-    <div className="md:grid grid-cols-7 min-h-[95vh] mx-auto">
-      <div className="col-span-4 h-full">
+    <div className="md:flex mx-auto justify-between gap-4 items-stretch pt-12">
+      <div className=" h-full mx-auto lg:w-[50%]">
         <SectionWrapper className="max-w-[1460px] mx-auto">
           <LeftSection />
         </SectionWrapper>
       </div>
-      <div className="col-span-3 h-full">
+      <div className="w-[100%] lg:w-[50%] ">
         <RightSection />
       </div>
     </div>
