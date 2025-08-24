@@ -1,13 +1,16 @@
 import React from "react";
 import { GradientBadge } from "../ui/Badges.jsx";
-import { ButtonFlippedReveal, ButtonOutlineHoverSolid } from "../ui/Buttons.jsx";
+import {
+  ButtonFlippedReveal,
+  ButtonOutlineHoverSolid,
+} from "../ui/Buttons.jsx";
 import AnimatedText from "../ui/AnimatedText.jsx";
 import { Mouse, ArrowRight, ArrowUpRight } from "lucide-react";
 
 export default function LeftSection() {
   return (
     <div className="h-full flex flex-col gap-6 text-center items-center md:text-start  justify-center md:items-start">
-      <GradientBadge text={"Built for Corporatives"} />
+      <GradientBadge text={"Built For Cooperatives"} />
 
       <h1 className="text-4xl md:text-5xl lg:text-7xl font-semibold">
         Powering Cooperative Digital <AnimatedText />
@@ -31,9 +34,7 @@ export default function LeftSection() {
           Get Started
         </ButtonFlippedReveal>
         <ButtonOutlineHoverSolid
-          className={
-            "h-[58px] rounded-2xl px-4 text-center"
-          }
+          className={"h-[58px] rounded-2xl px-4 text-center"}
         >
           Book Demo
         </ButtonOutlineHoverSolid>
