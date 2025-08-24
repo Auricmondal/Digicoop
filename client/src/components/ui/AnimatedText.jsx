@@ -23,7 +23,7 @@ export default function AnimatedText(
       <h1>
         <span
           key={animateKey}
-          className={`inline-block bg-clip-text text-transparent bg-gradient-to-r ${gradient}`}
+          className={`inline-block bg-clip-text text-transparent bg-gradient-to-r ${gradient} text-4xl md:text-5xl lg:text-7xl font-semibold`}
           style={{
             animation: "slide-up-fade 0.9s ease-in-out",
           }}

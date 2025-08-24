@@ -25,17 +25,17 @@ export default function LeftSection() {
             <ArrowUpRight className="text-primary bg-white rounded-full" />
           }
           className={
-            "bg-primary text-white rounded-2xl w-[195px] h-[58px] border-[2px] flex gap-1 items-center justify-center"
+            "bg-primary text-white rounded-2xl py-5 px-4 h-[58px] border-[2px] flex gap-1 items-center justify-center"
           }
         >
           Get Started
         </ButtonFlippedReveal>
         <ButtonOutlineHoverSolid
           className={
-            "w-[190px] h-[58px] rounded-2xl gap-1 flex items-center justify-center"
+            "h-[58px] rounded-2xl px-4 text-center"
           }
         >
-          Book Demo <ArrowRight />
+          Book Demo
         </ButtonOutlineHoverSolid>
       </div>
       <div className="text-custom-neutral-500 font-normal text-[16px] leading-[100%] tracking-[-0.022em] capitalize hidden md:flex gap-1 items-center">
