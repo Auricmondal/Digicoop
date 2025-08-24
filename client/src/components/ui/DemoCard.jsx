@@ -34,7 +34,7 @@ const DemoCard = ({ subsection, index, isReversed }) => {
                     </div>
                   </div>
 
-                  <div className="flex-1 px-6 order-2 lg:order-none">
+                  <div className="flex-1 order-2 lg:order-none">
                     <div
                       className={`w-full h-full ${getBackgroundColor(index)} rounded-2xl flex items-center justify-center p-2 overflow-hidden`}
                     >
