@@ -36,7 +36,7 @@ const HowThisWorks = () => {
     <SectionWrapper className="bg-tint">
       {/* ^ background uses Tint #EAF2FF */}
 
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-[1460px] mx-auto">
         {/* Section Header */}
         <div className="text-center mb-14">
           {/* Pill with gradient border */}
