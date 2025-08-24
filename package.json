@@ -1,0 +1,24 @@
+{
+  "name": "digicoop",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/Auricmondal/Digicoop#readme",
+  "bugs": {
+    "url": "https://github.com/Auricmondal/Digicoop/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Auricmondal/Digicoop.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "cd client && npm run dev",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "install": "cd client && npm install",
+    "dev": "cd client && npm run dev",
+    "build": "cd client && npm run build"
+  }
+}
