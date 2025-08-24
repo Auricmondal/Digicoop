@@ -3,6 +3,7 @@ import Brands from "../components/sections/Brands";
 import OurSolutions from "../components/sections/OurSolutions";
 import HowThisWorks from "../components/sections/HowThisWorks";
 import FAQSection from "../components/sections/FAQ";
+import Footer from "../components/shared/Footer";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <OurSolutions />
       <HowThisWorks />
       <FAQSection />
+      <Footer />
     </div>
   );
 }
