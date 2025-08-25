@@ -12,7 +12,7 @@ export default function RightSection() {
   return (
     <div className=" bg-primary-dark rounded-[2rem] md:rounded-tr-[0rem] md:rounded-br-[0rem] flex-1 min-h-[400px] m-[10px] md:m-0 h-full">
       <div
-        className="bg-contain min-h-[400px] bg-no-repeat bg-center h-full"
+        className="bg-contain min-h-[400px] bg-no-repeat bg-center h-full max-w-[1460px] mx-auto"
         style={{ backgroundImage: `url(${HeroImage})` }}
       ></div>
     </div>
