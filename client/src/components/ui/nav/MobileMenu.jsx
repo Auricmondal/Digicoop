@@ -45,7 +45,7 @@ const MobileMenu = ({
           <nav className="flex flex-col justify-between px-6 py-0 text-right">
             <div className="flex-1 justify-end space-y-2">
               <NavLink
-                to="/home"
+                to="/"
                 className="w-full text-right flex items-center justify-end px-4 py-3 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors duration-200 "
               >
                 Home
@@ -98,7 +98,7 @@ const MobileMenu = ({
               </NavLink>
 
               <NavLink
-                to="/contact"
+                to="/about/#contact"
                 className="w-full text-right flex items-center justify-end px-4 py-3 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors duration-200"
               >
                 Contact
