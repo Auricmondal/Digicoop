@@ -30,11 +30,8 @@ function Navbar() {
   };
 
   const solutionItems = [
-    "Digital Marketing",
-    "Web Development",
-    "Mobile Apps",
-    "Cloud Solutions",
     "Digital Audit",
+    "Digital Administration"
   ];
 
   return (
