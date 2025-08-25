@@ -2,7 +2,6 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import MainLayout from "./layouts/MainLayout";
 import Home from "./pages/HomePage";
 import ForgotPasswordPage from "./pages/ForgotPasswordPage";
-import LoginPage from "./pages/LoginPage";
 import AboutPage from "./pages/AboutPage";
 import "./App.css";
 
@@ -14,7 +13,6 @@ export default function App() {
           <Route index element={<Home />} />
           <Route path="about" element={<AboutPage />} />
         </Route>
-        <Route path="/login" element={<LoginPage />} />
         <Route path="/forgot-password" element={<ForgotPasswordPage />} />
       </Routes>
     </Router>
