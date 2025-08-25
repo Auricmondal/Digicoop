@@ -4,7 +4,7 @@ import { ArrowRight, ArrowUpRight } from "lucide-react";
 
 export function SolutionCard({ image, title, subtitle, buttontext }) {
   return (
-    <div className="bg-[#EAF2FF] border-2 border-gray-200 rounded-xl group/card">
+    <div className="bg-tint border-2 border-gray-200 rounded-xl group/card">
       {/* Image Section */}
       <div className="rounded-t-lg h-90 overflow-hidden">
         <div
@@ -24,7 +24,7 @@ export function SolutionCard({ image, title, subtitle, buttontext }) {
             hoverIcon={
               <ArrowUpRight className="text-primary bg-white rounded-full" />
             }
-            className="bg-[#EAF2FF] text-primary-dark rounded-xl w-full h-[64px] border-[2px] flex items-center justify-center font-semibold"
+            className="bg-tint text-primary-dark rounded-xl w-full h-[64px] border-[2px] flex items-center justify-center font-semibold"
           >
             {buttontext}
           </ButtonFlippedReveal>
