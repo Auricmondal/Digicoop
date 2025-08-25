@@ -23,7 +23,7 @@ const DesktopMenu = ({
 
   return (
     <nav
-      className="hidden md:flex items-center space-x-4"
+      className="hidden [@media(min-width:900px)]:flex items-center space-x-2"
       id="navbar"
       ref={navbarRef}
     >

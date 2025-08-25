@@ -1,12 +1,11 @@
 import React, { useState } from "react";
-import { ChevronLeft, Menu, X } from "lucide-react";
-import NavLink from "../ui/NavLink";
 import useIsMobile from "../../hooks/useResize";
 import MobileMenu from "../ui/nav/MobileMenu";
 import MenuButton from "../ui/nav/MenuButton";
 import DesktopMenu from "../ui/nav/DesktopMenu";
 import { useNavigate } from "react-router-dom";
 import BrandLogo from "./BrandLogo";
+// import useContainerWidth from "../../hooks/useContainerWidth";
 
 function Navbar() {
   const isMobile = useIsMobile();
@@ -35,7 +34,7 @@ function Navbar() {
     "Web Development",
     "Mobile Apps",
     "Cloud Solutions",
-    "Data Analytics",
+    "Digital Audit",
   ];
 
   return (

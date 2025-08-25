@@ -13,7 +13,7 @@ const MobileMenu = ({
 }) => {
   return (
     <div
-      className={`fixed top-0 inset-0 z-50 md:hidden transition-opacity duration-300 h-screen ${
+      className={`fixed flex justify-end top-0 inset-0 z-50 [@media(min-width:900px)]:hidden transition-opacity duration-300 max-h-screen ${
         isMobileMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none"
       }`}
     >
@@ -25,7 +25,7 @@ const MobileMenu = ({
 
       {/* Sliding menu panel */}
       <div
-        className={`absolute top-0 right-0 h-full w-75 max-w-sm bg-white shadow-xl transform transition-transform duration-300 ease-out ${
+        className={`flex flex-col justify-between absolute top-0 right-0 h-full w-75 max-w-sm bg-white shadow-xl transform transition-transform duration-300 ease-out ${
           isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
@@ -104,28 +104,28 @@ const MobileMenu = ({
                 Contact
               </NavLink>
             </div>
-            {/* Bottom action buttons */}
-            <div className="flex flex-col p-4 mt-4 border-t border-gray-200 space-y-3 bottom-0">
-              <ButtonOutlineHoverSolid
-                onClick={() => handleNavigation("/login")}
-                className={"h-[58px] rounded-2xl px-4 text-center"}
-              >
-                Log In
-              </ButtonOutlineHoverSolid>
-              <ButtonFlippedReveal
-                onClick={() => handleNavigation("/signup")}
-                icon={<ArrowRight />}
-                hoverIcon={
-                  <ArrowUpRight className="text-primary bg-white rounded-full" />
-                }
-                className={
-                  "bg-primary text-white rounded-2xl py-5 px-4 h-[58px] border-[2px] flex gap-2 items-center justify-center w-full"
-                }
-              >
-                Get Started
-              </ButtonFlippedReveal>
-            </div>
           </nav>
+        </div>
+        {/* Bottom action buttons */}
+        <div className="flex flex-col p-4 mt-4 border-gray-200 space-y-3 bottom-0">
+          <ButtonOutlineHoverSolid
+            onClick={() => handleNavigation("/login")}
+            className={"h-[58px] rounded-2xl px-4 text-center"}
+          >
+            Log In
+          </ButtonOutlineHoverSolid>
+          <ButtonFlippedReveal
+            onClick={() => handleNavigation("/signup")}
+            icon={<ArrowRight />}
+            hoverIcon={
+              <ArrowUpRight className="text-primary bg-white rounded-full" />
+            }
+            className={
+              "bg-primary text-white rounded-2xl py-5 px-4 h-[58px] border-[2px] flex gap-2 items-center justify-center w-full"
+            }
+          >
+            Get Started
+          </ButtonFlippedReveal>
         </div>
       </div>
     </div>
