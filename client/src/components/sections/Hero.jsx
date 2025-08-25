@@ -4,7 +4,7 @@ import SectionWrapper from "../../layouts/SectionWrapper";
 
 const Hero = () => {
   return (
-    <div className="md:flex mx-auto justify-between gap-4 items-stretch pt-12">
+    <div className="md:flex mx-auto justify-between gap-4 items-stretch ">
       <div className=" h-full mx-auto lg:w-[50%]">
         <SectionWrapper className="max-w-[1460px] mx-auto">
           <LeftSection />
