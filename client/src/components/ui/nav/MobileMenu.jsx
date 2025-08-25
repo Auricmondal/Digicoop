@@ -1,6 +1,7 @@
 import React from "react";
-import { X, ChevronLeft } from "lucide-react";
+import { X, ChevronLeft, ArrowRight, ArrowUpRight } from "lucide-react";
 import NavLink from "../NavLink";
+import { ButtonFlippedReveal, ButtonOutlineHoverSolid } from "../Buttons";
 
 const MobileMenu = ({
   isMobileMenuOpen,
@@ -12,7 +13,7 @@ const MobileMenu = ({
 }) => {
   return (
     <div
-      className={`fixed inset-0 z-50 md:hidden transition-opacity duration-300 ${
+      className={`fixed top-0 inset-0 z-50 md:hidden transition-opacity duration-300 h-screen ${
         isMobileMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none"
       }`}
     >
@@ -24,7 +25,7 @@ const MobileMenu = ({
 
       {/* Sliding menu panel */}
       <div
-        className={`absolute top-0 right-0 h-full w-80 max-w-sm bg-white shadow-xl transform transition-transform duration-300 ease-out ${
+        className={`absolute top-0 right-0 h-full w-75 max-w-sm bg-white shadow-xl transform transition-transform duration-300 ease-out ${
           isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
@@ -40,9 +41,9 @@ const MobileMenu = ({
         </div>
 
         {/* Navigation content */}
-        <div className="flex flex-col h-full">
-          <nav className="flex-1 justify-end px-6 py-0 space-y-96 text-right">
-            <div className="flex-1 justify-end space-y-1">
+        <div className="flex flex-col h-screen justify-between">
+          <nav className="flex flex-col justify-between px-6 py-0 text-right">
+            <div className="flex-1 justify-end space-y-2">
               <NavLink
                 to="/home"
                 className="w-full text-right flex items-center justify-end px-4 py-3 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors duration-200 "
@@ -51,7 +52,7 @@ const MobileMenu = ({
               </NavLink>
 
               <div>
-                <button
+                <NavLink
                   onClick={toggleSolutionDropdown}
                   className="w-full text-left flex items-center justify-end px-2 py-3 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors duration-200"
                 >
@@ -61,7 +62,7 @@ const MobileMenu = ({
                     }`}
                   />
                   Solution
-                </button>
+                </NavLink>
 
                 {/* Solution submenu with slide animation */}
                 <div
@@ -104,13 +105,25 @@ const MobileMenu = ({
               </NavLink>
             </div>
             {/* Bottom action buttons */}
-            <div className="p-6 border-t border-gray-200 space-y-3">
-              <button className="w-full px-6 py-3 text-blue-600 border-2 border-blue-600 rounded-lg hover:bg-blue-50 transition-colors duration-200 font-medium">
+            <div className="flex flex-col p-4 mt-4 border-t border-gray-200 space-y-3 bottom-0">
+              <ButtonOutlineHoverSolid
+                onClick={() => handleNavigation("/login")}
+                className={"h-[58px] rounded-2xl px-4 text-center"}
+              >
                 Log In
-              </button>
-              <button className="w-full px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-200 font-medium">
+              </ButtonOutlineHoverSolid>
+              <ButtonFlippedReveal
+                onClick={() => handleNavigation("/signup")}
+                icon={<ArrowRight />}
+                hoverIcon={
+                  <ArrowUpRight className="text-primary bg-white rounded-full" />
+                }
+                className={
+                  "bg-primary text-white rounded-2xl py-5 px-4 h-[58px] border-[2px] flex gap-2 items-center justify-center w-full"
+                }
+              >
                 Get Started
-              </button>
+              </ButtonFlippedReveal>
             </div>
           </nav>
         </div>

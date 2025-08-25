@@ -1,12 +1,19 @@
-import { ChevronDown } from 'lucide-react'
-import { Link } from 'react-router-dom'
-import React from 'react'
+import { ChevronDown } from "lucide-react";
+import { Link } from "react-router-dom";
+import React from "react";
 
-
-const NavLink = ({ children, className, to, toggle = false, onMouseEnter }) => {
+const NavLink = ({
+  children,
+  className,
+  to,
+  toggle = false,
+  onMouseEnter,
+  onMouseLeave,
+  onClick,
+}) => {
   return (
-    <div className={`group cursor-pointer ${className}`}>
-      <Link to={to} onMouseEnter={onMouseEnter}>
+    <div className={`group cursor-pointer ${className}`} onClick={onClick}>
+      <Link to={to} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
         <span className="relative block overflow-hidden">
           {/* First span (initial + third animation) */}
           <span
@@ -16,9 +23,12 @@ const NavLink = ({ children, className, to, toggle = false, onMouseEnter }) => {
           group-hover:delay-0
           "
           >
-            {children} {toggle && <ChevronDown
-              className={`ml-1 h-4 w-4 transition-transform duration-200`}
-            />}
+            {children}{" "}
+            {toggle && (
+              <ChevronDown
+                className={`ml-1 h-4 w-4 transition-transform duration-200`}
+              />
+            )}
           </span>
 
           {/* Second span (middle animation) */}
@@ -30,9 +40,12 @@ const NavLink = ({ children, className, to, toggle = false, onMouseEnter }) => {
           group-hover:delay-100
         "
           >
-            {children} {toggle && <ChevronDown
-              className={`ml-1 h-4 w-4 transition-transform duration-200 rotate-180`}
-            />}
+            {children}{" "}
+            {toggle && (
+              <ChevronDown
+                className={`ml-1 h-4 w-4 transition-transform duration-200 rotate-180`}
+              />
+            )}
           </span>
         </span>
 
@@ -46,8 +59,7 @@ const NavLink = ({ children, className, to, toggle = false, onMouseEnter }) => {
         />
       </Link>
     </div>
+  );
+};
 
-  )
-}
-
-export default NavLink
+export default NavLink;

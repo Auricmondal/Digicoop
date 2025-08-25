@@ -1,13 +1,15 @@
 import React from "react";
 import NavLink from "../NavLink";
 import { useClickOutside } from "../../../hooks/useClickOutside";
+import { ButtonFlippedReveal, ButtonOutlineHoverSolid } from "../Buttons";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 
 const DesktopMenu = ({
   isSolutionDropdownOpen,
   toggleSolutionDropdown,
   solutionItems,
   handleNavigation,
-  setIsSolutionDropdownOpen
+  setIsSolutionDropdownOpen,
 }) => {
   const navbarRef = React.useRef(null);
 
@@ -19,10 +21,9 @@ const DesktopMenu = ({
     isSolutionDropdownOpen
   );
 
-
   return (
     <nav
-      className="hidden md:flex items-center space-x-8"
+      className="hidden md:flex items-center space-x-4"
       id="navbar"
       ref={navbarRef}
     >
@@ -33,18 +34,20 @@ const DesktopMenu = ({
         Home
       </NavLink>
 
-      <div className="relative">
+      <div
+        className="relative"
+        onMouseEnter={toggleSolutionDropdown}
+        onMouseLeave={toggleSolutionDropdown}
+      >
         <NavLink
           toggle={true}
-          onMouseEnter={toggleSolutionDropdown}
-          isSolutionDropdownOpen={isSolutionDropdownOpen}
           className="flex text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200 px-2 py-1 rounded-md"
         >
           Solution
         </NavLink>
 
         {isSolutionDropdownOpen && (
-          <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50">
+          <div className="absolute top-full left-0 w-48 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50">
             {solutionItems.map((item, index) => (
               <button
                 key={index}
@@ -78,12 +81,24 @@ const DesktopMenu = ({
       </NavLink>
       {/* Desktop Action Buttons */}
       <div className="hidden md:flex items-center space-x-4">
-        <button className="px-4 py-2 text-blue-600 border border-blue-600 rounded-lg hover:bg-blue-50 transition-colors duration-200 font-medium">
+        <ButtonOutlineHoverSolid
+          onClick={() => handleNavigation("/login")}
+          className={"h-[58px] rounded-2xl px-4 text-center"}
+        >
           Log In
-        </button>
-        <button className="px-6 py-2 bg-primary-dark text-white rounded-lg hover:bg-primary transition-colors duration-200 font-medium">
+        </ButtonOutlineHoverSolid>
+        <ButtonFlippedReveal
+          onClick={() => handleNavigation("/signup")}
+          icon={<ArrowRight />}
+          hoverIcon={
+            <ArrowUpRight className="text-primary bg-white rounded-full" />
+          }
+          className={
+            "bg-primary text-white rounded-2xl py-5 px-4 h-[58px] border-[2px] flex gap-1 items-center justify-center"
+          }
+        >
           Get Started
-        </button>
+        </ButtonFlippedReveal>
       </div>
     </nav>
   );

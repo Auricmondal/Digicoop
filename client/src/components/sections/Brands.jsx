@@ -5,7 +5,7 @@ import GradientOverlay from "../ui/scroller/GradientOverlay";
 import InfiniteScrollContainer from "../ui/scroller/InfiniteScrollContainer";
 import LogoItem from "../ui/scroller/LogoItem";
 
-const Brands = ({reversePeriod = 10}) => {
+const Brands = ({reversePeriod = 0}) => {
   const logos = [
     {
       id: 1,
