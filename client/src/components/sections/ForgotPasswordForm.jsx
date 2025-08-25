@@ -5,21 +5,21 @@ import { ButtonFlippedReveal } from "../ui/Buttons";
 import useSubmit from "../../hooks/useSubmit";
 import FloatingLabelInput from "../ui/FormInput";
 
-const LoginForm = ({ onSubmit, onForgotPasswordClick }) => {
+const ForgotPasswordForm = ({ onSubmit, onLoginClick }) => {
   const { formData, handleChange, handleSubmit, loading, error } = useSubmit(
     onSubmit,
-    { email: "", password: "" }
+    { email: "" }
   );
 
-  const handleForgotPasswordClick = () => {
-    if (onForgotPasswordClick) {
-      onForgotPasswordClick();
+  const handleLoginClick = () => {
+    if (onLoginClick) {
+      onLoginClick();
     }
   };
 
   return (
     <SectionWrapper>
-      <div className="w-full md:w-md max-w-md bg-white rounded-lg shadow-md p-8">
+      <div className="w-full max-w-md bg-white rounded-lg shadow-md p-8">
         {/* Home Icon */}
         <Link to="/">
           <Home className="w-6 h-6 text-gray-600 cursor-pointer hover:text-gray-800 transition duration-200" />
@@ -31,11 +31,11 @@ const LoginForm = ({ onSubmit, onForgotPasswordClick }) => {
         </h1>
 
         {/* Description */}
-        <h2 className="text-center text-gray-800 mb-6 text-3xl font-bold">
-          Welcome Back!
-        </h2>
+        <p className="text-center text-gray-600 mb-6">
+          Enter your email and we'll send you a link to reset your password
+        </p>
 
-        {/* Inputs */}
+        {/* Email Input */}
         <FloatingLabelInput
           type="email"
           id="email"
@@ -43,15 +43,6 @@ const LoginForm = ({ onSubmit, onForgotPasswordClick }) => {
           value={formData.email}
           onChange={handleChange}
           placeholder="Email"
-          required
-        />
-        <FloatingLabelInput
-          type="password"
-          id="password"
-          name="password"
-          value={formData.password}
-          onChange={handleChange}
-          placeholder="Password"
           required
         />
 
@@ -69,17 +60,18 @@ const LoginForm = ({ onSubmit, onForgotPasswordClick }) => {
                 : "hover:shadow-md hover:shadow-black/50"
             }`}
           >
-            Log In
+            {loading ? "Sending..." : "Send"}
           </ButtonFlippedReveal>
         </div>
 
         {/* Login Link */}
         <div className="text-center mt-8">
+          <span className="text-gray-600">Remember Your Password? </span>
           <button
-            onClick={handleForgotPasswordClick}
+            onClick={handleLoginClick}
             className="text-blue-600 hover:text-blue-700 underline font-medium transition duration-200 bg-transparent border-none cursor-pointer"
           >
-            Forgot Your Password?
+            Log In
           </button>
         </div>
       </div>
@@ -87,4 +79,4 @@ const LoginForm = ({ onSubmit, onForgotPasswordClick }) => {
   );
 };
 
-export default LoginForm;
+export default ForgotPasswordForm;
