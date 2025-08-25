@@ -1,13 +1,14 @@
 import React from "react";
 
-export function ButtonFlippedReveal({ className, children, icon, hoverIcon }) {
+export function ButtonFlippedReveal({ className, children, icon, hoverIcon, ...props }) {
   return (
     <button
       className={`group cursor-pointer  ${className}`}
       style={{
         borderImage:
           "linear-gradient(93.63deg, rgba(255, 255, 255, 0.35) 3.45%, rgba(153, 153, 153, 0) 117.37%) 1",
-      }}
+        }}
+        {...props}
     >
       <span className="relative block overflow-hidden text-[20px]">
         <span className="flex transform transition-transform duration-300 group-hover:-translate-y-full text-[15px] md:text-[20px]">
