@@ -1,8 +1,9 @@
 import React from "react";
 
-export function ButtonFlippedReveal({ className, children, icon, hoverIcon, ...props }) {
+export function ButtonFlippedReveal({ className, children, icon, hoverIcon, onClick, ...props }) {
   return (
     <button
+      onClick={onClick}
       className={`group cursor-pointer  ${className}`}
       style={{
         borderImage:
@@ -30,9 +31,10 @@ export function ButtonFlippedReveal({ className, children, icon, hoverIcon, ...p
   );
 }
 
-export function ButtonOutlineHoverSolid({ className, children }) {
+export function ButtonOutlineHoverSolid({ className, children, onClick }) {
   return (
     <button
+      onClick={onClick}
       className={`border-2 border-dark-tint text-dark-tint hover:text-white hover:bg-dark-tint ${className} bg-transparent text-[15px] md:text-[20px]`}
     >
       {children}
