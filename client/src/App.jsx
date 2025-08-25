@@ -1,8 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import MainLayout from "./layouts/MainLayout";
 import Home from "./pages/HomePage";
-import "./App.css";
 import AboutPage from "./pages/AboutPage";
+import "./App.css";
 
 export default function App() {
   return (
