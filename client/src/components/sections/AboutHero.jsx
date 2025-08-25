@@ -1,10 +1,11 @@
 import React from "react";
 import aboutHero from "../../assets/images/about-hero.webp";
 import { AboutGradientBadge, GradientBadge } from "../ui/Badges";
+import SectionWrapper from "../../layouts/SectionWrapper";
 
 const AboutHero = () => {
   return (
-    <section className="bg-[linear-gradient(55.96deg,_var(--color-primary)_32.82%,_var(--color-dark-tint)_97.21%)] text-white pb-16 ">
+    <SectionWrapper className="bg-[linear-gradient(55.96deg,_var(--color-primary)_32.82%,_var(--color-dark-tint)_97.21%)] text-white pb-16 ">
       <div className="flex flex-col gap-5 items-center text-center py-10">
         <AboutGradientBadge text={"Meet The Team"} />
         <h1 className="max-w-[764px] text-[28px] md:text-[40px] lg:text-5xl font-semibold p-1 px-10">
@@ -26,14 +27,18 @@ const AboutHero = () => {
                   Location
                 </span>
                 <br />
-                <span className="font-semibold text-white text-xl">Berlin, Germany</span>
+                <span className="font-semibold text-white text-xl">
+                  Berlin, Germany
+                </span>
               </div>
               <div className="my-2">
                 <span className="font-semibold text-custom-neutral-300">
                   Founded By
                 </span>
                 <br />
-                <span className="font-semibold text-white text-xl">John Doe</span>
+                <span className="font-semibold text-white text-xl">
+                  John Doe
+                </span>
               </div>
               <div className="my-2">
                 <span className="font-semibold text-custom-neutral-300">
@@ -46,7 +51,7 @@ const AboutHero = () => {
           </div>
         </div>
       </div>
-    </section>
+    </SectionWrapper>
   );
 };
 
