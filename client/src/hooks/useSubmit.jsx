@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function useAuthForm(submitForm, initialFields = {}) {
+export default function useSubmit(submitForm, initialFields = {}) {
   const [formData, setFormData] = useState(initialFields);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");

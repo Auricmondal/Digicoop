@@ -1,9 +1,12 @@
 import { Home } from "lucide-react";
+import { Link } from "react-router-dom";
 import SectionWrapper from "../../layouts/SectionWrapper";
-import useAuthForm from "../../hooks/useAuthForm";
+import { ButtonFlippedReveal } from "../ui/Buttons";
+import useSubmit from "../../hooks/useSubmit";
+import FloatingLabelInput from "../ui/FormInput";
 
 const ForgotPasswordForm = ({ onSubmit, onLoginClick }) => {
-  const { formData, handleChange, handleSubmit, loading, error } = useAuthForm(
+  const { formData, handleChange, handleSubmit, loading, error } = useSubmit(
     onSubmit,
     { email: "" }
   );
@@ -18,7 +21,9 @@ const ForgotPasswordForm = ({ onSubmit, onLoginClick }) => {
     <SectionWrapper>
       <div className="w-full max-w-md bg-white rounded-lg shadow-md p-8">
         {/* Home Icon */}
-        <Home className="w-6 h-6 text-gray-600" />
+        <Link to="/">
+          <Home className="w-6 h-6 text-gray-600 cursor-pointer hover:text-gray-800 transition duration-200" />
+        </Link>
 
         {/* Brand Name */}
         <h1 className="text-center text-sm font-semibold text-primary mt-6">
@@ -31,31 +36,32 @@ const ForgotPasswordForm = ({ onSubmit, onLoginClick }) => {
         </p>
 
         {/* Email Input */}
-        <input
+        <FloatingLabelInput
           type="email"
           id="email"
           name="email"
           value={formData.email}
           onChange={handleChange}
-          className="mb-6 w-full border-b border-gray-300 focus:outline-none focus:border-b focus:border-primary ease-in-out duration-200"
           placeholder="Email"
           required
         />
+
         {/* Error Message from hook */}
         {error && <p className="text-red-500 text-sm mb-4">{error}</p>}
 
         {/* Send Button */}
         <div className="flex justify-center">
-          <button
-            type="button"
+          <ButtonFlippedReveal
             onClick={handleSubmit}
             disabled={loading}
             className={`bg-primary text-white py-2 px-4 rounded-xl transition duration-200 focus:outline-none focus:ring-2 focus:ring-dark-tint ${
-              loading ? "opacity-50 cursor-not-allowed" : "hover:shadow-md hover:shadow-black/50"
+              loading
+                ? "opacity-50 cursor-not-allowed"
+                : "hover:shadow-md hover:shadow-black/50"
             }`}
           >
-            Send
-          </button>
+            {loading ? "Sending..." : "Send"}
+          </ButtonFlippedReveal>
         </div>
 
         {/* Login Link */}
