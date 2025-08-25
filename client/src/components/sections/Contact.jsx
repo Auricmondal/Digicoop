@@ -23,21 +23,24 @@ const ContactUs = () => {
     switch (name) {
       case "name":
         if (!value.trim()) return "Name is required";
-        if (value.trim().length < 2) return "Name must be at least 2 characters";
+        if (value.trim().length < 2)
+          return "Name must be at least 2 characters";
         return "";
-      
+
       case "email": {
         if (!value.trim()) return "Email is required";
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(value)) return "Please enter a valid email address";
+        if (!emailRegex.test(value))
+          return "Please enter a valid email address";
         return "";
       }
-      
+
       case "message":
         if (!value.trim()) return "Message is required";
-        if (value.trim().length < 10) return "Message must be at least 10 characters";
+        if (value.trim().length < 10)
+          return "Message must be at least 10 characters";
         return "";
-      
+
       default:
         return "";
     }
@@ -45,26 +48,26 @@ const ContactUs = () => {
 
   const handleInputChange = (e) => {
     handleChange(e);
-    
+
     // Clear validation error when user starts typing
     const { name } = e.target;
     if (validationErrors[name]) {
-      setValidationErrors(prev => ({ ...prev, [name]: "" }));
+      setValidationErrors((prev) => ({ ...prev, [name]: "" }));
     }
   };
 
   const handleBlur = (e) => {
     const { name, value } = e.target;
     const error = validateField(name, value);
-    setValidationErrors(prev => ({ ...prev, [name]: error }));
+    setValidationErrors((prev) => ({ ...prev, [name]: error }));
   };
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    
+
     // Validate all fields
     const newErrors = {};
-    Object.keys(formData).forEach(key => {
+    Object.keys(formData).forEach((key) => {
       const error = validateField(key, formData[key]);
       if (error) newErrors[key] = error;
     });
@@ -79,7 +82,7 @@ const ContactUs = () => {
 
   return (
     <SectionWrapper className="bg-tint">
-      <div className="max-w-[1460px] mx-auto">
+      <div className="max-w-[1460px] mx-auto" id="contact">
         {/* Section Header */}
         <div className="flex flex-col justify-center text-center gap-6">
           {/* Pill with gradient border */}
@@ -99,10 +102,11 @@ const ContactUs = () => {
             </h2>
 
             <p className="text-[0.875rem] sm:text-[1rem] lg:text-[1.25rem] font-normal leading-[1.6] tracking-[0] text-center text-black ">
-                Whether you&apos;re ready to digitize your cooperative or simply
-                curious about how DigiCoop works, we&apos;d love to hear from you. Our
-                team is here to answer questions, guide you through the platform, and
-                explore how we can support your cooperative&apos;s journey.
+              Whether you&apos;re ready to digitize your cooperative or simply
+              curious about how DigiCoop works, we&apos;d love to hear from you.
+              Our team is here to answer questions, guide you through the
+              platform, and explore how we can support your cooperative&apos;s
+              journey.
             </p>
           </div>
         </div>
@@ -133,7 +137,9 @@ const ContactUs = () => {
               }`}
             />
             {validationErrors.name && (
-              <p className="text-red-500 text-sm px-1">{validationErrors.name}</p>
+              <p className="text-red-500 text-sm px-1">
+                {validationErrors.name}
+              </p>
             )}
           </div>
 
@@ -151,7 +157,9 @@ const ContactUs = () => {
               }`}
             />
             {validationErrors.email && (
-              <p className="text-red-500 text-sm px-1">{validationErrors.email}</p>
+              <p className="text-red-500 text-sm px-1">
+                {validationErrors.email}
+              </p>
             )}
           </div>
 
@@ -169,14 +177,16 @@ const ContactUs = () => {
               }`}
             />
             {validationErrors.message && (
-              <p className="text-red-500 text-sm px-1">{validationErrors.message}</p>
+              <p className="text-red-500 text-sm px-1">
+                {validationErrors.message}
+              </p>
             )}
           </div>
 
-          <ButtonFlippedReveal 
+          <ButtonFlippedReveal
             className={`bg-primary text-white rounded-2xl py-5 px-4 h-[58px] border-[2px] flex gap-1 items-center justify-center ${
               loading ? "opacity-50 cursor-not-allowed" : ""
-            }`} 
+            }`}
             type="submit"
             disabled={loading}
           >
