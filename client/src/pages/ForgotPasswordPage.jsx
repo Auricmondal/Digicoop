@@ -15,7 +15,7 @@ export default function ForgotPasswordPage() {
   };
 
   const handleLoginClick = () => {
-    navigate("/"); // no Login Route yet
+    navigate("/login");
   };
 
   return (
