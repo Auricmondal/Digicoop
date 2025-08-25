@@ -2,6 +2,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import MainLayout from "./layouts/MainLayout";
 import Home from "./pages/HomePage";
+import ForgotPasswordPage from "./pages/ForgotPasswordPage";
 import "./App.css";
 
 export default function App() {
@@ -11,6 +12,7 @@ export default function App() {
         <Route path="/" element={<MainLayout />}>
           <Route index element={<Home />} />
         </Route>
+        <Route path="/forgot-password" element={<ForgotPasswordPage />} />
       </Routes>
     </Router>
   );
