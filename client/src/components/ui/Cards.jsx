@@ -1,6 +1,7 @@
 import React from "react";
 import { ButtonFlippedReveal } from "./Buttons";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
+import QuotationVector from "../../assets/icons/QuotationVector.svg";
 
 export function SolutionCard({ image, title, subtitle, buttontext }) {
   return (
@@ -29,6 +30,38 @@ export function SolutionCard({ image, title, subtitle, buttontext }) {
             {buttontext}
           </ButtonFlippedReveal>
         </div>
+      </div>
+    </div>
+  );
+}
+
+export function QuoteCard({ quote }) {
+  const openquotes = (
+    <div className="flex gap-1 shrink-0">
+      <img src={QuotationVector} alt="Quote Vector" className="h-8 md:h-24 lg:h-12 w-auto" />
+      <img src={QuotationVector} alt="Quote Vector" className="h-8 md:h-24 lg:h-12 w-auto" />
+    </div>
+  );
+
+  const closequotes = (
+    <div className="flex gap-1 shrink-0 rotate-y-180">
+      <img src={QuotationVector} alt="Quote Vector" className="h-8 md:h-24 lg:h-12 w-auto"/>
+      <img src={QuotationVector} alt="Quote Vector" className="h-8 md:h-24 lg:h-12 w-auto"/>
+    </div>
+  );
+
+  return (
+    <div className="relative flex md:w-1/2">
+      <div className="h-full">
+        {openquotes}
+      </div>
+
+      <div className="min-w-0 flex-1 font-medium text-center text-xl md:text-2xl my-auto">
+        <p className="break-words mx-2 my-24">{quote}</p>
+      </div>
+
+      <div className="flex items-end md:h-full">
+        {closequotes}
       </div>
     </div>
   );
