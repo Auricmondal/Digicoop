@@ -55,7 +55,7 @@ const Testimonial = () => {
   };
 
   return (
-    <div className="w-full bg-primary px-4 py-12 sm:px-8 lg:px-12 sm:py-12 md:py-12 lg:py-16">
+    <div className="w-full bg-primary px-4 py-8 sm:px-6 lg:px-12 sm:py-12 md:py-12 lg:py-16">
       <div
         className="max-w-[1460px] max-h-4xl mx-auto"
         onMouseEnter={() => setIsPaused(true)}
@@ -63,7 +63,7 @@ const Testimonial = () => {
       >
         <div className="relative overflow-hidden w-full group">
           <div className="flex flex-row items-center justify-between w-full">
-            <h2 className="lg:text-5xl md:text-4xl text-4xl font-bold mb-8 text-[#467FFD] mx-auto sm:mx-0">
+            <h2 className="lg:text-5xl md:text-4xl text-2xl font-bold mb-8 text-[#467FFD] mx-auto sm:mx-0">
               Customer Reviews
             </h2>
 
@@ -82,11 +82,11 @@ const Testimonial = () => {
                 key={`${review.id}-${index}`}
                 className={`flex-shrink-0 rounded-xl overflow-hidden translate-transform bg-transparent border border-white/80 md:w-[90%] w-[100%] ease-in-out duration-300 ${currentIndex === index ? "scale-100 opacity-100" : "scale-95 opacity-70"} ${currentIndex > 0 ? currentIndex < totalReviews - 1 ? "lg:translate-x-[5.5%] md:translate-x-[6%]" : "lg:translate-x-[11%] md:translate-x-[11%]" : ""}`}
               >
-                <div className="flex flex-col p-16 space-y-8 max-h-[500px] justify-between">
-                  <div className="text-[84px] text-white/80">
+                <div className="flex flex-col p-8 space-y-8 max-h-fit h-auto justify-between">
+                  <div className="text-7xl text-white/80">
                     {review.name}
                   </div>
-                  <p className="text-white lg:text-3xl md:text-2xl sm:text-xl font-semibold">
+                  <p className="text-white lg:text-3xl md:text-2xl sm:text-2xl font-semibold">
                     "{review.quote}"
                   </p>
                   <div className="text-[#467FFD] lg:text-xl md:text-base sm:text-sm">
