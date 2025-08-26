@@ -46,7 +46,7 @@ export default function AnimatedHeader({
       } else {
         clearInterval(interval);
       }
-    }, 500);
+    }, 300);
 
     return () => clearInterval(interval);
   }, [hasAnimated, words.length]);
@@ -65,14 +65,14 @@ export default function AnimatedHeader({
             {word.isBreak && idx !== 0 && <div className="w-full h-0" />}
             <span
               key={idx}
-              className={`inline-block font-semibold transition-opacity duration-500 ease-in-out ${
+              className={`inline-block font-semibold transition-opacity duration-400 ease-in-out ${
                 word.isGradient
                   ? `bg-clip-text text-transparent bg-gradient-to-r ${gradient}`
                   : `text-foreground`
               }`}
               style={
                 isVisible
-                  ? { animation: "slide-up-fade 0.9s ease-in-out" }
+                  ? { animation: "slide-up-fade 0.5s ease-in-out" }
                   : { opacity: 0, visibility: "hidden" }
               }
             >
