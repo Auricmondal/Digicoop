@@ -2,15 +2,27 @@ import React from "react";
 import aboutHero from "../../assets/images/about-hero.webp";
 import { AboutGradientBadge, GradientBadge } from "../ui/Badges";
 import SectionWrapper from "../../layouts/SectionWrapper";
+import AnimatedHeader from "../ui/AnimatedHeader";
 
 const AboutHero = () => {
   return (
     <SectionWrapper className="bg-[linear-gradient(55.96deg,_var(--color-primary)_32.82%,_var(--color-dark-tint)_97.21%)] text-white pb-16 ">
       <div className="flex flex-col gap-5 items-center text-center py-10">
         <AboutGradientBadge text={"Meet The Team"} />
-        <h1 className="max-w-[764px] text-[28px] md:text-[40px] lg:text-5xl font-semibold p-1 px-10">
-          Carrying a Legacy Into the Digital Future
-        </h1>
+        <div className="max-w-[764px] p-1 px-10">
+          <AnimatedHeader
+            words={[
+              { text: "Carrying", isGradient: false },
+              { text: "a", isGradient: false },
+              { text: "Legacy", isGradient: false },
+              { text: "Into", isGradient: false },
+              { text: "the", isGradient: false },
+              { text: "Digital", isGradient: false },
+              { text: "Future", isGradient: false },
+            ]}
+            className="text-white text-center text-[28px] md:text-[40px] lg:text-5xl font-semibold  justify-center"
+          />
+        </div>
       </div>
 
       <div className="max-w-7xl mx-auto md:px-4">

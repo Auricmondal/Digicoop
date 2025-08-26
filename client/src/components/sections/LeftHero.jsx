@@ -6,15 +6,24 @@ import {
 } from "../ui/Buttons.jsx";
 import AnimatedText from "../ui/AnimatedText.jsx";
 import { Mouse, ArrowRight, ArrowUpRight } from "lucide-react";
+import AnimatedHeader from "../ui/AnimatedHeader.jsx";
 
 export default function LeftSection() {
   return (
     <div className="h-full flex flex-col gap-6 text-center items-center md:text-start  justify-center md:items-start">
       <GradientBadge text={"Built For Cooperatives"} />
 
-      <h1 className="text-4xl md:text-5xl lg:text-7xl font-semibold">
-        Powering Cooperative Digital <AnimatedText />
-      </h1>
+      <div className="text-4xl md:text-5xl lg:text-7xl font-semibold">
+        <AnimatedHeader
+          words={[
+            { text: "Powering", isGradient: false },
+            { text: "Cooperative", isGradient: false },
+            { text: "Digital", isGradient: false },
+          ]}
+          className="font-semibold text-black text-4xl md:text-5xl lg:text-7xl"
+        />
+        <AnimatedText />
+      </div>
 
       <p className="mt-4 text-md md:text-lg max-w-2xl text-gray-400">
         Securely Join, Manage And Govern Cooperatives — From Share Purchases To
