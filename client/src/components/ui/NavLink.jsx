@@ -1,5 +1,5 @@
 import { ChevronDown } from "lucide-react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import React from "react";
 
 const NavLink = ({
@@ -9,6 +9,7 @@ const NavLink = ({
   onMouseEnter,
   onMouseLeave,
   onClick,
+  isActive,
 }) => {
   return (
     <div className={`group cursor-pointer ${className}`} onClick={onClick}>
@@ -48,14 +49,18 @@ const NavLink = ({
           </span>
         </span>
 
-        <hr
-          className="
+        {isActive ? (
+          <hr className="w-full bg-black" />
+        ) : (
+          <hr
+            className="
       w-0
       group-hover:w-full
       transition-all duration-300 bg-black
       group-hover:delay-300
     "
-        />
+          />
+        )}
       </div>
     </div>
   );
