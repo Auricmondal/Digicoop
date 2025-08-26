@@ -1,5 +1,5 @@
 import React from "react";
-import HowThisWorks1 from "../../assets/images/HowThisWorks1.webp";
+import solutions from "../../assets/images/solutions.webp";
 import DemoCard from "../ui/DemoCard";
 import { GradientBadge } from "../ui/Badges";
 import SectionWrapper from "../../layouts/SectionWrapper";
@@ -10,25 +10,25 @@ const HowThisWorks = () => {
       title: "Join & Manage with DigiV",
       description:
         "Start by bringing your cooperative online. With DigiV, members can join in minutes, administrators can manage shares and rentals, and all governance documents stay securely stored in one place.",
-      img: HowThisWorks1,
+      img: solutions,
     },
     {
       title: "Keep Everything Organized",
       description:
         "From member lists and resolutions to loan agreements and financial statements, DigiV ensures every critical record is version-secure and always ready when you need it.",
-      img: HowThisWorks1,
+      img: solutions,
     },
     {
       title: "Prepare for Audits Effortlessly",
       description:
         "When it's time for review, DigiAudit steps in. It creates a structured, transparent audit trail where all documents and processes are accessible in one central folder.",
-      img: HowThisWorks1,
+      img: solutions,
     },
     {
       title: "Save Time and Reduce Costs",
       description:
         "With guided workflows, automatic checks, and fewer manual steps, audits become faster, clearer, and far less expensive — leaving more resources for your cooperative's growth.",
-      img: HowThisWorks1,
+      img: solutions,
     },
   ];
 
