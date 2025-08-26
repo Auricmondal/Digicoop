@@ -13,14 +13,14 @@ export default function LeftSection() {
     <div className="h-full flex flex-col gap-6 text-center items-center md:text-start  justify-center md:items-start">
       <GradientBadge text={"Built For Cooperatives"} />
 
-      <div className="text-4xl md:text-5xl lg:text-7xl font-semibold">
+      <div className="text-4xl md:text-5xl lg:text-7xl font-semibold flex flex-wrap justify-center md:justify-start items-center">
         <AnimatedHeader
           words={[
             { text: "Powering", isGradient: false },
             { text: "Cooperative", isGradient: false },
             { text: "Digital", isGradient: false },
           ]}
-          className="font-semibold text-black text-4xl md:text-5xl lg:text-7xl"
+          className="font-semibold text-black text-4xl md:text-5xl justify-center md:justify-start lg:text-7xl"
         />
         <AnimatedText />
       </div>
