@@ -1,6 +1,7 @@
 import { LayoutGroup } from "motion/react";
 import FAQItem from "../ui/FAQItem";
 import SectionWrapper from "../../layouts/SectionWrapper";
+import AnimatedHeader from "../ui/AnimatedHeader";
 
 const faqs = [
   {
@@ -20,9 +21,16 @@ const faqs = [
 export default function FAQSection() {
   return (
     <SectionWrapper className="max-w-[1460px] mx-auto">
-      <h2 className="text-2xl md:text-[32px] lg:text-[48px] mb-[10px] font-medium text-center">
-        Frequently Asked Questions
-      </h2>
+      <div className="text-2xl md:text-[32px] lg:text-[48px] mb-[10px] font-medium text-center">
+        <AnimatedHeader
+          words={[
+            { text: "Frequently", isGradient: false },
+            { text: "Asked", isGradient: false },
+            { text: "Questions", isGradient: false },
+          ]}
+          className="text-black text-center text-2xl md:text-[32px] lg:text-[48px] mb-[10px] font-medium justify-center"
+        />
+      </div>
       <LayoutGroup>
         <div className="space-y-[10px]">
           {faqs.map((faq, idx) => (
