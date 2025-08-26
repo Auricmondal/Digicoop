@@ -5,7 +5,6 @@ import MenuButton from "../ui/nav/MenuButton";
 import DesktopMenu from "../ui/nav/DesktopMenu";
 import { useNavigate } from "react-router-dom";
 import BrandLogo from "./BrandLogo";
-// import useContainerWidth from "../../hooks/useContainerWidth";
 
 function Navbar() {
   const isMobile = useIsMobile();

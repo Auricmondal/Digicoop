@@ -5,7 +5,6 @@ import React from "react";
 const NavLink = ({
   children,
   className,
-  to,
   toggle = false,
   onMouseEnter,
   onMouseLeave,
@@ -13,7 +12,7 @@ const NavLink = ({
 }) => {
   return (
     <div className={`group cursor-pointer ${className}`} onClick={onClick}>
-      <Link to={to} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
+      <div onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
         <span className="relative block overflow-hidden">
           {/* First span (initial + third animation) */}
           <span
@@ -57,7 +56,7 @@ const NavLink = ({
       group-hover:delay-300
     "
         />
-      </Link>
+      </div>
     </div>
   );
 };
