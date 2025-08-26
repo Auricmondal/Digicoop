@@ -28,7 +28,7 @@ const DesktopMenu = ({
       ref={navbarRef}
     >
       <NavLink
-        to="/"
+        onClick={() => handleNavigation("/")}
         className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200 px-2 py-1 rounded-md"
       >
         Home
@@ -66,15 +66,14 @@ const DesktopMenu = ({
       </div>
 
       <NavLink
-        to="/about"
-        // toggle={true}
+        onClick={() => handleNavigation("/about")}
         className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200 px-2 py-1 rounded-md"
       >
         About
       </NavLink>
 
       <NavLink
-        to="/about/#contact"
+        onClick={() => handleNavigation("/contact")}
         className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200 px-2 py-1 rounded-md"
       >
         Contact
