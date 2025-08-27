@@ -1,9 +1,9 @@
 import { Home } from "lucide-react";
 import { Link } from "react-router-dom";
-import SectionWrapper from "../../layouts/SectionWrapper";
-import { ButtonFlippedReveal } from "../ui/Buttons";
-import useSubmit from "../../hooks/useSubmit";
-import FloatingLabelInput from "../ui/FormInput";
+import SectionWrapper from "@/layouts/SectionWrapper";
+import { ButtonFlippedReveal } from "@/components/ui/Buttons";
+import useSubmit from "@/hooks/useSubmit";
+import FloatingLabelInput from "@/components/ui/FormInput";
 
 const ForgotPasswordForm = ({ onSubmit, onLoginClick }) => {
   const { formData, handleChange, handleSubmit, loading, error } = useSubmit(

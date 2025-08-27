@@ -1,9 +1,9 @@
 import React from "react";
-import { SolutionCard } from "../ui/Cards";
-import { GradientBadge } from "../ui/Badges";
-import SolutionsImage from "../../assets/images/solutions.webp";
-import SectionWrapper from "../../layouts/SectionWrapper";
-import AnimatedHeader from "../ui/AnimatedHeader";
+import { SolutionCard } from "@/components/ui/Cards";
+import { GradientBadge } from "@/components/ui/Badges";
+import SolutionsImage from "@/assets/images/solutions.webp";
+import SectionWrapper from "@/layouts/SectionWrapper";
+import AnimatedHeader from "@/components/ui/AnimatedHeader";
 
 const OurSolutions = () => {
   const solutions = [

@@ -1,9 +1,9 @@
-import Instagram from "../../assets/icons/Instagram.svg";
-import Facebook from "../../assets/icons/Facebook.svg";
-import Mail from "../../assets/icons/Mail.svg";
-import MapPin from "../../assets/icons/MapPin.svg";
-import Phone from "../../assets/icons/Phone.svg";
-import SectionWrapper from "../../layouts/SectionWrapper";
+import Instagram from "@/assets/icons/Instagram.svg";
+import Facebook from "@/assets/icons/Facebook.svg";
+import Mail from "@/assets/icons/Mail.svg";
+import MapPin from "@/assets/icons/MapPin.svg";
+import Phone from "@/assets/icons/Phone.svg";
+import SectionWrapper from "@/layouts/SectionWrapper";
 
 export default function Footer() {
   return (

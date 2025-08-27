@@ -1,5 +1,5 @@
 import React from "react";
-import Explore from "../shared/Explore";
+import Explore from "@/components/shared/Explore";
 
 const DemoCard = ({ subsection, index, isReversed }) => {
   // Alternating background colors

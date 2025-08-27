@@ -1,9 +1,9 @@
 import React from "react";
-import solutions from "../../assets/images/solutions.webp";
-import DemoCard from "../ui/DemoCard";
-import { GradientBadge } from "../ui/Badges";
-import SectionWrapper from "../../layouts/SectionWrapper";
-import AnimatedHeader from "../ui/AnimatedHeader";
+import solutions from "@/assets/images/solutions.webp";
+import DemoCard from "@/components/ui/DemoCard";
+import { GradientBadge } from "@/components/ui/Badges";
+import SectionWrapper from "@/layouts/SectionWrapper";
+import AnimatedHeader from "@/components/ui/AnimatedHeader";
 
 const HowThisWorks = () => {
   const subsections = [

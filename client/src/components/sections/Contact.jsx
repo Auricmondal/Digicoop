@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { GradientBadge } from "../ui/Badges";
-import SectionWrapper from "../../layouts/SectionWrapper";
-import { ButtonFlippedReveal } from "../ui/Buttons";
-import useSubmit from "../../hooks/useSubmit"; // Adjust path as needed
-import AnimatedHeader from "../ui/AnimatedHeader";
+import { GradientBadge } from "@/components/ui/Badges";
+import SectionWrapper from "@/layouts/SectionWrapper";
+import { ButtonFlippedReveal } from "@/components/ui/Buttons";
+import useSubmit from "@/hooks/useSubmit"; // Adjust path as needed
+import AnimatedHeader from "@/components/ui/AnimatedHeader";
 
 const ContactUs = () => {
   const [validationErrors, setValidationErrors] = useState({});

@@ -1,7 +1,7 @@
 import { LayoutGroup } from "motion/react";
-import FAQItem from "../ui/FAQItem";
-import SectionWrapper from "../../layouts/SectionWrapper";
-import AnimatedHeader from "../ui/AnimatedHeader";
+import FAQItem from "@/components/ui/FAQItem";
+import SectionWrapper from "@/layouts/SectionWrapper";
+import AnimatedHeader from "@/components/ui/AnimatedHeader";
 
 const faqs = [
   {

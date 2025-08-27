@@ -1,5 +1,5 @@
 import React from "react";
-import SolutionsHero from "../components/sections/SolutionsHero";
+import SolutionsHero from "@/components/sections/SolutionsHero";
 
 const SolutionsPage = () => {
   return (

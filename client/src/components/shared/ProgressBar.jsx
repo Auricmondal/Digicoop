@@ -1,5 +1,5 @@
 // ProgressBar.jsx
-import useNProgress from "../../hooks/useNProgress";
+import useNProgress from "@/hooks/useNProgress";
 
 export default function ProgressBar() {
   useNProgress();
