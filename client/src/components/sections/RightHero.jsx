@@ -1,5 +1,5 @@
 import React from "react";
-import HeroImage from "../../assets/images/hero.webp";
+import HeroImage from "@/assets/images/hero.webp";
 
 const nodes = [
   { id: 1, label: "Member Login", top: "25%", left: "15%" },

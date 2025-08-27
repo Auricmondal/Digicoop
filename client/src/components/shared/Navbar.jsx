@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import useIsMobile from "../../hooks/useResize";
-import MobileMenu from "../ui/nav/MobileMenu";
-import MenuButton from "../ui/nav/MenuButton";
-import DesktopMenu from "../ui/nav/DesktopMenu";
+import useIsMobile from "@/hooks/useResize";
+import MobileMenu from "@/components/ui/nav/MobileMenu";
+import MenuButton from "@/components/ui/nav/MenuButton";
+import DesktopMenu from "@/components/ui/nav/DesktopMenu";
 import { useLocation, useNavigate } from "react-router-dom";
 import BrandLogo from "./BrandLogo";
 import useScrollPosition from "../../hooks/useScrollPosition";

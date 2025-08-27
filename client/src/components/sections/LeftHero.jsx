@@ -1,12 +1,12 @@
 import React from "react";
-import { GradientBadge } from "../ui/Badges.jsx";
+import { GradientBadge } from "@/components/ui/Badges.jsx";
 import {
   ButtonFlippedReveal,
   ButtonOutlineHoverSolid,
-} from "../ui/Buttons.jsx";
-import AnimatedText from "../ui/AnimatedText.jsx";
+} from "@/components/ui/Buttons.jsx";
+import AnimatedText from "@/components/ui/AnimatedText.jsx";
 import { Mouse, ArrowRight, ArrowUpRight } from "lucide-react";
-import AnimatedHeader from "../ui/AnimatedHeader.jsx";
+import AnimatedHeader from "@/components/ui/AnimatedHeader.jsx";
 
 export default function LeftSection() {
   return (

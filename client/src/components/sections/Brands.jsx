@@ -1,11 +1,11 @@
 import React from "react";
-import useInfiniteLogos from "../../hooks/useInfiniteLogos";
-import useContainerWidth from "../../hooks/useContainerWidth";
-import GradientOverlay from "../ui/scroller/GradientOverlay";
-import InfiniteScrollContainer from "../ui/scroller/InfiniteScrollContainer";
-import LogoItem from "../ui/scroller/LogoItem";
+import useInfiniteLogos from "@/hooks/useInfiniteLogos";
+import useContainerWidth from "@/hooks/useContainerWidth";
+import GradientOverlay from "@/components/ui/scroller/GradientOverlay";
+import InfiniteScrollContainer from "@/components/ui/scroller/InfiniteScrollContainer";
+import LogoItem from "@/components/ui/scroller/LogoItem";
 
-const Brands = ({reversePeriod = 0}) => {
+const Brands = ({ reversePeriod = 0 }) => {
   const logos = [
     {
       id: 1,
@@ -38,8 +38,11 @@ const Brands = ({reversePeriod = 0}) => {
       <div className="relative overflow-hidden" ref={containerRef}>
         <GradientOverlay />
         {duplicatedLogos.length > 0 && (
-          <InfiniteScrollContainer oneSetWidth={oneSetWidth} duration={25} 
-            reversePeriod={reversePeriod}>
+          <InfiniteScrollContainer
+            oneSetWidth={oneSetWidth}
+            duration={25}
+            reversePeriod={reversePeriod}
+          >
             {duplicatedLogos.map((logo, index) => (
               <LogoItem key={`${logo.id}-${index}`} logo={logo} index={index} />
             ))}

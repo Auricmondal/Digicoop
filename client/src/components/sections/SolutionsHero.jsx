@@ -1,9 +1,9 @@
-import SectionWrapper from "../../layouts/SectionWrapper";
-import AnimatedHeader from "../ui/AnimatedHeader";
-import { ButtonFlippedReveal, ButtonOutlineHoverSolid } from "../ui/Buttons";
-import { GradientBadge } from "../ui/Badges";
+import SectionWrapper from "@/layouts/SectionWrapper";
+import AnimatedHeader from "@/components/ui/AnimatedHeader";
+import { ButtonFlippedReveal, ButtonOutlineHoverSolid } from "@/components/ui/Buttons";
+import { GradientBadge } from "@/components/ui/Badges";
 import { Mouse, ArrowRight, ArrowUpRight } from "lucide-react";
-import bgImage from "../../assets/images/solutions-bg.webp";
+import bgImage from "@/assets/images/solutions-bg.webp";
 
 const SolutionsHero = () => {
   return (

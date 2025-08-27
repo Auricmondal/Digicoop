@@ -1,8 +1,8 @@
 import React from "react";
-import aboutHero from "../../assets/images/about-hero.webp";
-import { GradientBadge } from "../ui/Badges";
-import SectionWrapper from "../../layouts/SectionWrapper";
-import AnimatedHeader from "../ui/AnimatedHeader";
+import aboutHero from "@/assets/images/about-hero.webp";
+import { GradientBadge } from "@/components/ui/Badges";
+import SectionWrapper from "@/layouts/SectionWrapper";
+import AnimatedHeader from "@/components/ui/AnimatedHeader";
 
 const AboutHero = () => {
   return (
