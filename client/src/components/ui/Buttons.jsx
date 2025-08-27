@@ -24,7 +24,7 @@ export function ButtonFlippedReveal({
         onClick={onClick}
         className={`group ${
           fullWidth ? "w-full" : ""
-        } rounded-2xl cursor-pointer ${className}`}
+        } rounded-2xl cursor-pointer w-full md:w-fit ${className}`}
         {...props}
       >
         <span className="relative block overflow-hidden text-[20px]">
