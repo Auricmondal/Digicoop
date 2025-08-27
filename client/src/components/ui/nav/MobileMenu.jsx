@@ -120,8 +120,9 @@ const MobileMenu = ({
             hoverIcon={
               <ArrowUpRight className="text-primary bg-white rounded-full" />
             }
+            fullWidth={true}
             className={
-              "bg-primary text-white rounded-2xl py-5 px-4 h-[58px] border-[2px] flex gap-2 items-center justify-center w-full"
+              "bg-primary text-white rounded-2xl py-5 px-4 h-[58px] tify-center w-full"
             }
           >
             Get Started
