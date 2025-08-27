@@ -29,6 +29,7 @@ const DesktopMenu = ({ solutionItems, handleNavigation }) => {
 
       <div className="group relative">
         <NavLink
+          onClick={() => handleNavigation("/solutions")}
           toggle={true}
           className={`transition-colors duration-200 px-2 py-1 rounded-md ${
             location.pathname.startsWith("/solutions")
@@ -96,11 +97,11 @@ const DesktopMenu = ({ solutionItems, handleNavigation }) => {
           hoverIcon={
             <ArrowUpRight className="text-primary bg-white rounded-full" />
           }
-          className={`rounded-2xl py-5 px-4 h-[58px] border-[2px] flex gap-1 items-center justify-center
+          className={`rounded-2xl py-5 px-4 h-[58px] flex gap-1 items-center justify-center
             ${
               location.pathname.startsWith("/about")
                 ? "bg-white text-primary"
-                : "bg-tint text-white"
+                : "bg-primary text-white"
             }
             `}
         >

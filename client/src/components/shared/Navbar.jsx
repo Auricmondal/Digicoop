@@ -38,7 +38,7 @@ function Navbar() {
 
   return (
     <header id="navbar" className={`w-full top-0 z-40 py-3 text-lg duration-300 transform ease-in-out
-      ${scrolled ? location.pathname.startsWith('/about') ? `bg-primary shadow-sm` : `bg-white shadow-sm` : "bg-transparent text-white"}
+      ${scrolled ? location.pathname.startsWith('/about') || location.pathname.startsWith('/solutions') ? `bg-primary shadow-sm` : `bg-white shadow-sm` : "bg-transparent text-white"}
       ${location.pathname === "/" ? "sticky" : "fixed"}
     `}>
       <div className="mx-auto px-4 sm:px-6 lg:px-8">
