@@ -78,9 +78,7 @@ const DesktopMenu = ({ solutionItems, handleNavigation }) => {
       <NavLink
         onClick={() => handleNavigation("/about#contact")}
         className={`transition-colors duration-200 px-2 py-1 rounded-md ${
-          location.pathname === "/about#contact"
-            ? activeClass
-            : inactiveClass
+          location.pathname === "/about#contact" ? activeClass : inactiveClass
         }`}
         isActive={location.pathname === "/about#contact"}
       >
@@ -90,13 +88,13 @@ const DesktopMenu = ({ solutionItems, handleNavigation }) => {
       <div className="hidden md:flex items-center space-x-4">
         <ButtonOutlineHoverSolid
           onClick={() => handleNavigation("/login")}
-          className={`h-[58px] rounded-2xl px-4 text-center ${
-            location.pathname.startsWith("/about") ||
-            location.pathname.startsWith("/solutions") ||
-            location.pathname.startsWith("/contact")
+          className={`h-[58px] rounded-2xl px-4 text-center hover:text-white hover:bg-dark-tint
+            ${location.pathname.startsWith("/solutions") ? "border-dark-tint" : "border-white"}
+            ${
+            location.pathname.startsWith("/about")
               ? "border-white text-white"
               : "border-dark-tint text-dark-tint"
-          } hover:text-white hover:bg-dark-tint`}
+          }`}
         >
           Log In
         </ButtonOutlineHoverSolid>
@@ -107,14 +105,12 @@ const DesktopMenu = ({ solutionItems, handleNavigation }) => {
             <ArrowUpRight className="text-primary bg-white rounded-full" />
           }
           className={`rounded-2xl py-5 px-4 h-[58px] flex gap-1 items-center justify-center
+            ${location.pathname.startsWith("/solutions") ? "border-dark-tint" : "border-white"}
             ${
-              location.pathname.startsWith("/about") ||
-              location.pathname.startsWith("/solutions") ||
-              location.pathname.startsWith("/contact")
+              location.pathname.startsWith("/about")
                 ? "bg-white text-primary"
                 : "bg-primary text-white"
-            }
-            `}
+            }`}
         >
           Get Started
         </ButtonFlippedReveal>
