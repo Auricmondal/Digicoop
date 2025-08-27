@@ -1,6 +1,6 @@
 import React from "react";
-import SectionWrapper from "../../layouts/SectionWrapper";
-import AnimatedHeader from "../ui/AnimatedHeader";
+import SectionWrapper from "@/layouts/SectionWrapper";
+import AnimatedHeader from "@/components/ui/AnimatedHeader";
 
 const OurVision = () => {
   return (

@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import ForgotPasswordForm from "../components/sections/ForgotPasswordForm";
+import ForgotPasswordForm from "@/components/sections/ForgotPasswordForm";
 
 export default function ForgotPasswordPage() {
   const navigate = useNavigate();

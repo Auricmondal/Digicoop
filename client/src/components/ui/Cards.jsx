@@ -1,7 +1,7 @@
 import React from "react";
 import { ButtonFlippedReveal } from "./Buttons";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
-import QuotationVector from "../../assets/icons/QuotationVector.svg";
+import QuotationVector from "@/assets/icons/QuotationVector.svg";
 
 export function SolutionCard({ image, title, subtitle, buttontext }) {
   return (
