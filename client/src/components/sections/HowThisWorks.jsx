@@ -3,8 +3,9 @@ import solutions from "../../assets/images/solutions.webp";
 import DemoCard from "../ui/DemoCard";
 import { GradientBadge } from "../ui/Badges";
 import SectionWrapper from "../../layouts/SectionWrapper";
+import ScrollStack,{ ScrollStackItem } from "../ui/ScrollStack";
 
-const HowThisWorks = () => {
+const HowThisWorks = ({ isStraight = false }) => {
   const subsections = [
     {
       title: "Join & Manage with DigiV",
@@ -34,30 +35,28 @@ const HowThisWorks = () => {
 
   return (
     <SectionWrapper className="bg-tint">
-      {/* ^ background uses Tint #EAF2FF */}
+      {/* ^ background Tint #EAF2FF */}
 
       <div className="max-w-[1460px] mx-auto">
         {/* Section Header */}
         <div className="flex flex-col justify-center text-center gap-4">
-          {/* Pill with gradient border */}
           <span>
             <GradientBadge text={"How This Works"} />
           </span>
 
-          {/* Header content container with responsive sizing */}
-          <div className="w-full max-w-[90%] sm:max-w-[600px] lg:max-w-[724px] h-auto lg:h-[168px] mx-auto flex flex-col justify-center gap-2 lg:gap-[10px] opacity-100">
+          {/* Header content container */}
+
+          <div className="w-full max-w-[90%] sm:max-w-[600px] lg:max-w-[724px] h-auto lg:h-[168px] mx-auto flex flex-col justify-center gap-2 lg:gap-[10px] opacity-100 lg:pb-2">
             <h2 className="text-[1.5rem] sm:text-[2rem] lg:text-[2.5rem] font-semibold leading-[1.1] tracking-[-0.01em] text-primary-dark mb-4 ">
-              {/* ^ Primary Dark #001F52 */}
               From Chaos to{" "}
               <span className="text-[1.5rem] sm:text-[2rem] lg:text-[2.5rem] font-semibold leading-[1.1] tracking-[-0.01em] bg-gradient-to-r from-primary to-dark-tint bg-clip-text text-transparent">
                 Clarity
               </span>
-              {/* ^ Dark Tint #467FFD */}
             </h2>
 
             <p className="text-[0.875rem] sm:text-[1rem] lg:text-[1.25rem] font-normal leading-[1.6] tracking-[0] text-center text-black ">
               DigiCoop turns complex cooperative tasks into a smooth digital
-              flow — one place for members, documents, and audits that just
+              flow - one place for members, documents, and audits that just
               works.
             </p>
           </div>
@@ -70,9 +69,10 @@ const HowThisWorks = () => {
               <DemoCard
                 subsection={subsection}
                 index={index}
-                isReversed={index % 2 === 1}
+                isReversed={isStraight ? false : index % 2 === 0}
+                isStraight={isStraight}
               />
-
+    
               {/* Responsive Divider Line - Only show between sections (not after last one) */}
               {index < subsections.length - 1 && (
                 <hr className="w-full lg:hidden mx-auto border-0 border-t border-dark-tint/80" />

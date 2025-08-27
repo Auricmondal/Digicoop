@@ -7,11 +7,11 @@ import useSubmit from "../../hooks/useSubmit"; // Adjust path as needed
 const ContactUs = () => {
   const [validationErrors, setValidationErrors] = useState({});
 
-  // Mock submit function - replace with your actual API call
+  //! Mock submit function - replace with your actual API call
   const submitContactForm = async (data) => {
-    // Simulate API call
+    //! Simulate API call
     console.log("Submitting contact form:", data);
-    // Add your actual form submission logic here
+    // TODO: Add actual form submission logic here
   };
 
   const { formData, handleChange, handleSubmit, loading, error } = useSubmit(
