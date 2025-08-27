@@ -8,11 +8,8 @@ import SolutionsHero from "../components/sections/SolutionsHero";
 const SolutionsPage = () => {
   return (
     <div>
-
-      <HowThisWorks isStraight={true} />
-
       <SolutionsHero />
-
+      <HowThisWorks isStraight={true} />
     </div>
   );
 };
