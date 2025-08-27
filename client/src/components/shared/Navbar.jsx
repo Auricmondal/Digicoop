@@ -42,11 +42,8 @@ function Navbar() {
 
           {/* Desktop Navigation */}
           <DesktopMenu
-            isSolutionDropdownOpen={isSolutionDropdownOpen}
-            toggleSolutionDropdown={toggleSolutionDropdown}
             solutionItems={solutionItems}
             handleNavigation={handleNavigation}
-            setIsSolutionDropdownOpen={setIsSolutionDropdownOpen}
           />
 
           {/* Mobile Menu Button */}

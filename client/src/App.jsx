@@ -4,12 +4,14 @@ import Home from "./pages/HomePage";
 import LoginPage from "./pages/LoginPage";
 import ForgotPasswordPage from "./pages/ForgotPasswordPage";
 import AboutPage from "./pages/AboutPage";
+import ProgressBar from "./components/shared/ProgressBar";
 import "./App.css";
 import SolutionPage from "./pages/SolutionPage";
 
 export default function App() {
   return (
     <Router>
+      <ProgressBar />
       <Routes>
         <Route path="/" element={<MainLayout />}>
           <Route index element={<Home />} />
