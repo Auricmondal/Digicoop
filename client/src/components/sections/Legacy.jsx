@@ -5,6 +5,15 @@ import { QuoteCard } from "@/components/ui/Cards";
 import AnimatedHeader from "@/components/ui/AnimatedHeader";
 
 const LegacySection = () => {
+  const quotes = [
+    {
+      quote: "Trebor Scholz, who reimagined cooperation in the digital space.",
+    },
+    {
+      quote:
+        "José Maria Arizmendiarrieta, who showed that entrepreneurship can be member-owned.",
+    },
+  ];
   return (
     <SectionWrapper className="max-w-[1460px] mx-auto">
       <div className="m-8 flex justify-center">
@@ -24,9 +33,9 @@ const LegacySection = () => {
       </p>
 
       <div className="bg-dark-tint text-white rounded-md px-6 py-8 flex flex-col md:flex-row justify-between gap-6 text-center sm:text-left mb-8 md:mb-16">
-        <QuoteCard quote="Trebor Scholz, who reimagined cooperation in the digital space." />
-
-        <QuoteCard quote="José Maria Arizmendiarrieta, who showed that entrepreneurship can be member-owned." />
+        {quotes.map((quote, index) => (
+          <QuoteCard key={index} quote={quote.quote} />
+        ))}
       </div>
       <p className="text-gray-700 md:text-xl lg:text-2xl mb-8">
         We see DigiCoop as the next step in this legacy. By offering audit-proof

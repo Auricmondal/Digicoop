@@ -51,7 +51,7 @@ const SolutionsHero = () => {
               Get Started
             </ButtonFlippedReveal>
             <ButtonOutlineHoverSolid
-              className={"h-[58px] rounded-2xl px-4 text-center"}
+              className={"h-[58px] rounded-2xl px-4 text-center border-dark-tint text-dark-tint hover:text-white hover:bg-dark-tint"}
             >
               Book Demo
             </ButtonOutlineHoverSolid>
