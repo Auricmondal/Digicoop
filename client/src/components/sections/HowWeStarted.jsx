@@ -3,6 +3,7 @@ import cooperativeGuy from "../../assets/images/cooperativeguy.webp";
 import groupWork from "../../assets/images/group-work.webp";
 import SimpleCard from "../ui/SimpleCard";
 import SectionWrapper from "../../layouts/SectionWrapper";
+import AnimatedHeader from "../ui/AnimatedHeader";
 
 const HowThisWorks = () => {
   const subsections = [
@@ -25,9 +26,17 @@ const HowThisWorks = () => {
       <div className="max-w-[1460px] flex flex-col mx-auto lg:gap-8">
         {/* Section Header */}
         <div className="flex flex-col justify-center text-center">
-
           {/* Header content container  */}
-          <div className="text-[32px] font-semibold lg:pb-4">How We Started</div>
+          <div className="text-[32px] font-semibold lg:pb-4">
+            <AnimatedHeader
+              words={[
+                { text: "How", isGradient: false },
+                { text: "We", isGradient: false },
+                { text: "Started", isGradient: false },
+              ]}
+              className="text-[32px] font-semibold"
+            />
+          </div>
         </div>
 
         {/* Subsections */}

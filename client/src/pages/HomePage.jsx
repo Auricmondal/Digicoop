@@ -3,11 +3,8 @@ import Brands from "../components/sections/Brands";
 import OurSolutions from "../components/sections/OurSolutions";
 import HowThisWorks from "../components/sections/HowThisWorks";
 import FAQSection from "../components/sections/FAQ";
-
 import FinalCTA from "../components/sections/FinalCTA";
-
-import Footer from "../components/shared/Footer";
-
+import Testimonial from "../components/sections/Testimonial";
 
 export default function Home() {
   return (
@@ -16,9 +13,9 @@ export default function Home() {
       <Brands />
       <OurSolutions />
       <HowThisWorks />
+      <Testimonial />
       <FAQSection />
       <FinalCTA />
-
     </div>
   );
 }

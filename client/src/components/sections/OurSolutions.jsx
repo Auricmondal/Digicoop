@@ -3,6 +3,7 @@ import { SolutionCard } from "../ui/Cards";
 import { GradientBadge } from "../ui/Badges";
 import SolutionsImage from "../../assets/images/solutions.webp";
 import SectionWrapper from "../../layouts/SectionWrapper";
+import AnimatedHeader from "../ui/AnimatedHeader";
 
 const OurSolutions = () => {
   const solutions = [
@@ -30,10 +31,17 @@ const OurSolutions = () => {
 
         {/* Title */}
         <h2 className="flex flex-col items-center justify-center text-center text-4xl md:text-5xl font-semibold leading-[1.1] tracking-normal">
-          Smarter Tools for Stronger <br />
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-dark-tint font-semibold">
-            Cooperatives
-          </span>
+          {/* Smarter Tools for Stronger  */}
+          <AnimatedHeader
+            words={[
+              { text: "Smarter", isGradient: false },
+              { text: "Tools", isGradient: false },
+              { text: "for", isGradient: false },
+              { text: "Stronger", isGradient: false },
+              { text: "Cooperatives", isGradient: true, isBreak: true },
+            ]}
+            className="font-semibold text-black text-center text-4xl md:text-5xl justify-center leading-[1.1] tracking-normal"
+          />
         </h2>
 
         {/* Subtitle */}

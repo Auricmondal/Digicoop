@@ -2,6 +2,7 @@ import React from "react";
 import { X, ChevronLeft, ArrowRight, ArrowUpRight } from "lucide-react";
 import NavLink from "../NavLink";
 import { ButtonFlippedReveal, ButtonOutlineHoverSolid } from "../Buttons";
+import { useLocation } from "react-router-dom";
 
 const MobileMenu = ({
   isMobileMenuOpen,
@@ -11,6 +12,11 @@ const MobileMenu = ({
   solutionItems,
   handleNavigation,
 }) => {
+  const location = useLocation();
+
+  const activeClass = "text-blue-600 font-medium";
+  const inactiveClass = "text-gray-700 hover:text-blue-600 font-medium";
+
   return (
     <div
       className={`fixed flex justify-end top-0 inset-0 z-50 [@media(min-width:900px)]:hidden transition-opacity duration-300 max-h-screen ${
@@ -45,8 +51,9 @@ const MobileMenu = ({
           <nav className="flex flex-col justify-between px-6 py-0 text-right">
             <div className="flex-1 justify-end space-y-2">
               <NavLink
-                to="/"
-                className="w-full text-right flex items-center justify-end px-4 py-3 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors duration-200 "
+                onClick={() => handleNavigation("/")}
+                className={`w-full text-right flex items-center justify-end px-4 py-3 text-base hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors duration-200 ${location.pathname === "/" ? activeClass : inactiveClass}`}
+                isActive={location.pathname === "/"}
               >
                 Home
               </NavLink>
@@ -54,7 +61,8 @@ const MobileMenu = ({
               <div>
                 <NavLink
                   onClick={toggleSolutionDropdown}
-                  className="w-full text-left flex items-center justify-end px-2 py-3 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors duration-200"
+                  className={`w-full text-left flex items-center justify-end px-2 py-3 text-base hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors duration-200 ${location.pathname.startsWith("/solutions") ? activeClass : inactiveClass}`}
+                  isActive={location.pathname.startsWith("/solutions")}
                 >
                   <ChevronLeft
                     className={`h-4 w-4 transition-transform duration-200 ${
@@ -91,15 +99,17 @@ const MobileMenu = ({
               </div>
 
               <NavLink
-                to="/about"
-                className="w-full text-right flex items-center justify-end px-4 py-3 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors duration-200"
+                onClick={() => handleNavigation("/about")}
+                className={`w-full text-right flex items-center justify-end px-4 py-3 text-base hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors duration-200 ${location.pathname.startsWith("/about") ? activeClass : inactiveClass}`}
+                isActive={location.pathname.startsWith("/about")}
               >
                 About
               </NavLink>
 
               <NavLink
-                to="/about/#contact"
-                className="w-full text-right flex items-center justify-end px-4 py-3 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors duration-200"
+                onClick={() => handleNavigation("/about/#contact")}
+                className={`w-full text-right flex items-center justify-end px-4 py-3 text-base hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors duration-200 ${location.pathname.startsWith("/about/#contact") ? activeClass : inactiveClass}`}
+                isActive={location.pathname.startsWith("/about/#contact")}
               >
                 Contact
               </NavLink>

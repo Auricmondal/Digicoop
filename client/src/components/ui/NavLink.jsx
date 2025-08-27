@@ -1,19 +1,18 @@
 import { ChevronDown } from "lucide-react";
-import { Link } from "react-router-dom";
 import React from "react";
 
 const NavLink = ({
   children,
   className,
-  to,
   toggle = false,
   onMouseEnter,
   onMouseLeave,
   onClick,
+  isActive,
 }) => {
   return (
     <div className={`group cursor-pointer ${className}`} onClick={onClick}>
-      <Link to={to} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
+      <div onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
         <span className="relative block overflow-hidden">
           {/* First span (initial + third animation) */}
           <span
@@ -49,15 +48,19 @@ const NavLink = ({
           </span>
         </span>
 
-        <hr
-          className="
+        {isActive ? (
+          <hr className="w-full bg-black" />
+        ) : (
+          <hr
+            className="
       w-0
       group-hover:w-full
       transition-all duration-300 bg-black
       group-hover:delay-300
     "
-        />
-      </Link>
+          />
+        )}
+      </div>
     </div>
   );
 };

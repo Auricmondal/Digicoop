@@ -1,25 +1,15 @@
 import React from "react";
 import NavLink from "../NavLink";
-import { useClickOutside } from "../../../hooks/useClickOutside";
 import { ButtonFlippedReveal, ButtonOutlineHoverSolid } from "../Buttons";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { useLocation } from "react-router-dom";
 
-const DesktopMenu = ({
-  isSolutionDropdownOpen,
-  toggleSolutionDropdown,
-  solutionItems,
-  handleNavigation,
-  setIsSolutionDropdownOpen,
-}) => {
+const DesktopMenu = ({ solutionItems, handleNavigation }) => {
   const navbarRef = React.useRef(null);
+  const location = useLocation();
 
-  useClickOutside(
-    navbarRef,
-    () => {
-      setIsSolutionDropdownOpen(false);
-    },
-    isSolutionDropdownOpen
-  );
+  const activeClass = "text-blue-600 font-medium";
+  const inactiveClass = "text-gray-700 hover:text-blue-600 font-medium";
 
   return (
     <nav
@@ -28,54 +18,51 @@ const DesktopMenu = ({
       ref={navbarRef}
     >
       <NavLink
-        to="/"
-        className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200 px-2 py-1 rounded-md"
+        onClick={() => handleNavigation("/")}
+        className={`hover:text-blue-600 transition-colors duration-200 px-2 py-1 rounded-md ${location.pathname === "/" ? activeClass : inactiveClass}`}
+        isActive={location.pathname === "/"}
       >
         Home
       </NavLink>
 
-      <div
-        className="relative"
-        onMouseEnter={toggleSolutionDropdown}
-        onMouseLeave={toggleSolutionDropdown}
-      >
+      <div className="group relative">
         <NavLink
           toggle={true}
-          className="flex text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200 px-2 py-1 rounded-md"
+          className={`hover:text-blue-600 transition-colors duration-200 px-2 py-1 rounded-md ${location.pathname.startsWith("/solutions") ? activeClass : inactiveClass}`}
+          isActive={location.pathname.startsWith("/solutions")}
         >
           Solution
         </NavLink>
 
-        {isSolutionDropdownOpen && (
-          <div className="absolute top-full left-0 w-48 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50">
-            {solutionItems.map((item, index) => (
-              <button
-                key={index}
-                onClick={() =>
-                  handleNavigation(
-                    `/solutions/${item.toLowerCase().replace(" ", "-")}`
-                  )
-                }
-                className="w-full text-left block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-150"
-              >
-                {item}
-              </button>
-            ))}
-          </div>
-        )}
+        <div className="absolute top-full left-0 w-max bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50 scale-0 group-hover:scale-100 transition-transform duration-200 ease-in-out origin-top-left">
+          {solutionItems.map((item, index) => (
+            <button
+              key={index}
+              onClick={() =>
+                handleNavigation(
+                  `/solutions/${item.toLowerCase().replace(" ", "-")}`
+                )
+              }
+              className="w-full text-left block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-150"
+            >
+              {item}
+            </button>
+          ))}
+        </div>
       </div>
 
       <NavLink
-        to="/about"
-        // toggle={true}
-        className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200 px-2 py-1 rounded-md"
+        onClick={() => handleNavigation("/about")}
+        className={`hover:text-blue-600 transition-colors duration-200 px-2 py-1 rounded-md ${location.pathname.startsWith("/about") ? activeClass : inactiveClass}`}
+        isActive={location.pathname.startsWith("/about")}
       >
         About
       </NavLink>
 
       <NavLink
-        to="/about/#contact"
-        className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200 px-2 py-1 rounded-md"
+        onClick={() => handleNavigation("/about/#contact")}
+        className={`hover:text-blue-600 transition-colors duration-200 px-2 py-1 rounded-md ${location.pathname.startsWith("/about/#contact") ? activeClass : inactiveClass}`}
+        isActive={location.pathname.startsWith("/about/#contact")}
       >
         Contact
       </NavLink>
