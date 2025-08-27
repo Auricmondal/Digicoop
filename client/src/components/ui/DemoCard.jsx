@@ -23,7 +23,7 @@ const DemoCard = ({ subsection, index, isReversed, isStraight = false }) => {
   };
 
   return (
-    <div className={`flex flex-col lg:flex-row items-center gap-10 ${isReversed ? "lg:flex-row-reverse" : ""}`}>
+    <div className={`bg-tint flex flex-col lg:flex-row items-center gap-10 ${isReversed ? "lg:flex-row-reverse" : ""}`}>
       <div className="flex-1 order-2 lg:order-none">
         <div
           className={`w-full h-full ${getBackgroundColor(index, isStraight)} rounded-2xl flex items-center justify-center p-2 overflow-hidden relative`}
@@ -37,7 +37,9 @@ const DemoCard = ({ subsection, index, isReversed, isStraight = false }) => {
                 backgroundSize: '130%',
                 backgroundPosition: 'center',
                 backgroundRepeat: 'no-repeat',
-                filter: 'brightness(1.8)'
+                filter: 'brightness(1.8)',
+                opacity: 1,
+                mixBlendMode: 'hard-light',
               }}
             />
           )}

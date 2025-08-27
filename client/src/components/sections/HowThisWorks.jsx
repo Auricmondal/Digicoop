@@ -63,23 +63,28 @@ const HowThisWorks = ({ isStraight = false }) => {
         </div>
 
         {/* Subsections */}
-        <div className="space-y-16 lg:space-y-24">
+        <ScrollStack 
+          className="h-screen"
+          itemDistance={150}
+          itemScale={0.05}
+          itemStackDistance={40}
+          stackPosition="30%"
+          scaleEndPosition="15%"
+          baseScale={0.9}
+          rotationAmount={0}
+          blurAmount={1}
+        >
           {subsections.map((subsection, index) => (
-            <React.Fragment key={index}>
+            <ScrollStackItem key={index}>
               <DemoCard
                 subsection={subsection}
                 index={index}
                 isReversed={isStraight ? false : index % 2 === 0}
                 isStraight={isStraight}
               />
-    
-              {/* Responsive Divider Line - Only show between sections (not after last one) */}
-              {index < subsections.length - 1 && (
-                <hr className="w-full lg:hidden mx-auto border-0 border-t border-dark-tint/80" />
-              )}
-            </React.Fragment>
+            </ScrollStackItem>
           ))}
-        </div>
+        </ScrollStack>
       </div>
     </SectionWrapper>
   );
