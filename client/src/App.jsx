@@ -4,9 +4,9 @@ import Home from "./pages/HomePage";
 import LoginPage from "./pages/LoginPage";
 import ForgotPasswordPage from "./pages/ForgotPasswordPage";
 import AboutPage from "./pages/AboutPage";
+import SolutionsPage from "./pages/SolutionsPage";
 import ProgressBar from "./components/shared/ProgressBar";
 import "./App.css";
-import SolutionsPage from "./pages/SolutionsPage";
 
 export default function App() {
   return (
