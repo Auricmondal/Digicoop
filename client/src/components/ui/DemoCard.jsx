@@ -1,6 +1,6 @@
 import React from "react";
 import Explore from "../shared/Explore";
-import SolutionsBg from "../../assets/images/solutions-bg.jpg";
+import SolutionsBg from "../../assets/images/solutions-bg.webp";
 
 const DemoCard = ({ subsection, index, isReversed, isStraight = false }) => {
   // Different background colors based on isStraight prop
@@ -37,7 +37,7 @@ const DemoCard = ({ subsection, index, isReversed, isStraight = false }) => {
                 backgroundSize: '130%',
                 backgroundPosition: 'center',
                 backgroundRepeat: 'no-repeat',
-                filter: 'brightness(1.8)',
+                filter: 'brightness(1.3)',
                 opacity: 1,
                 mixBlendMode: 'hard-light',
               }}
