@@ -4,7 +4,7 @@ import SectionWrapper from "@/layouts/SectionWrapper";
 import { ButtonFlippedReveal } from "@/components/ui/Buttons";
 import useSubmit from "@/hooks/useSubmit"; // Adjust path as needed
 import AnimatedHeader from "@/components/ui/AnimatedHeader";
-import useSmoothScroll from "../../hooks/useSmoothScroll";
+import useSmoothScroll from "@/hooks/useSmoothScroll";
 
 const ContactUs = () => {
   const [validationErrors, setValidationErrors] = useState({});
