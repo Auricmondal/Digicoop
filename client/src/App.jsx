@@ -7,7 +7,6 @@ import AboutPage from "./pages/AboutPage";
 import SolutionsPage from "./pages/SolutionsPage";
 import ProgressBar from "./components/shared/ProgressBar";
 import "./App.css";
-import SolutionsPage from "./pages/SolutionsPage";
 
 export default function App() {
   return (
