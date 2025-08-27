@@ -60,9 +60,9 @@ const DesktopMenu = ({ solutionItems, handleNavigation }) => {
       </NavLink>
 
       <NavLink
-        onClick={() => handleNavigation("/contact")}
-        className={`hover:text-blue-600 transition-colors duration-200 px-2 py-1 rounded-md ${location.pathname.startsWith("/contact") ? activeClass : inactiveClass}`}
-        isActive={location.pathname.startsWith("/contact")}
+        onClick={() => handleNavigation("/about/#contact")}
+        className={`hover:text-blue-600 transition-colors duration-200 px-2 py-1 rounded-md ${location.pathname.startsWith("/about/#contact") ? activeClass : inactiveClass}`}
+        isActive={location.pathname.startsWith("/about/#contact")}
       >
         Contact
       </NavLink>
