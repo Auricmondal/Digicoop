@@ -1,6 +1,6 @@
 import React from "react";
 import aboutHero from "../../assets/images/about-hero.webp";
-import { AboutGradientBadge, GradientBadge } from "../ui/Badges";
+import { GradientBadge } from "../ui/Badges";
 import SectionWrapper from "../../layouts/SectionWrapper";
 import AnimatedHeader from "../ui/AnimatedHeader";
 
@@ -8,7 +8,11 @@ const AboutHero = () => {
   return (
     <SectionWrapper className="bg-[linear-gradient(55.96deg,_var(--color-primary)_32.82%,_var(--color-dark-tint)_97.21%)] text-white pb-16 ">
       <div className="flex flex-col gap-5 items-center text-center py-10">
-        <AboutGradientBadge text={"Meet The Team"} />
+        <GradientBadge
+          text={"Meet Team DigiCoop"}
+          backgroundColor="from-[#467FFD] to-[#EAF2FF]"
+          borderGradient="from-[rgba(0, 0, 150, 1)] to-dark-tint"
+        />
         <div className="max-w-[764px] p-1 px-10">
           <AnimatedHeader
             words={[
