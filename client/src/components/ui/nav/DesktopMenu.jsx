@@ -76,13 +76,13 @@ const DesktopMenu = ({ solutionItems, handleNavigation }) => {
       </NavLink>
 
       <NavLink
-        onClick={() => handleNavigation("/contact")}
+        onClick={() => handleNavigation("/about#contact")}
         className={`transition-colors duration-200 px-2 py-1 rounded-md ${
-          location.pathname.startsWith("/contact")
+          location.pathname === "/about#contact"
             ? activeClass
             : inactiveClass
         }`}
-        isActive={location.pathname.startsWith("/contact")}
+        isActive={location.pathname === "/about#contact"}
       >
         Contact
       </NavLink>

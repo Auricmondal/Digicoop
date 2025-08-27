@@ -104,15 +104,15 @@ const MobileMenu = ({
               <NavLink
                 onClick={() => handleNavigation("/about")}
                 className={`w-full text-right flex items-center justify-end px-4 py-3 text-base hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors duration-200 ${location.pathname.startsWith("/about") ? activeClass : inactiveClass}`}
-                isActive={location.pathname.startsWith("/about")}
+                isActive={location.pathname === "/about"}
               >
                 About
               </NavLink>
 
               <NavLink
-                onClick={() => handleNavigation("/contact")}
-                className={`w-full text-right flex items-center justify-end px-4 py-3 text-base hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors duration-200 ${location.pathname.startsWith("/contact") ? activeClass : inactiveClass}`}
-                isActive={location.pathname.startsWith("/contact")}
+                onClick={() => handleNavigation("/about#contact")}
+                className={`w-full text-right flex items-center justify-end px-4 py-3 text-base hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors duration-200 ${location.pathname.startsWith("/about#contact") ? activeClass : inactiveClass}`}
+                isActive={location.pathname === "/about#contact"}
               >
                 Contact
               </NavLink>
