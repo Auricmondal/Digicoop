@@ -1,5 +1,6 @@
 import React from "react";
 import Explore from "@/components/shared/Explore";
+import SolutionsBg from "@/assets/images/solutions-bg.webp";
 
 const DemoCard = ({ subsection, index, isReversed, isStraight = false }) => {
   // Different background colors based on isStraight prop
