@@ -1,6 +1,6 @@
 import React from "react";
-import SectionWrapper from "../../layouts/SectionWrapper";
-import { TestimonialCard } from "../ui/Cards";
+import SectionWrapper from "@/layouts/SectionWrapper";
+import { TestimonialCard } from "@/components/ui/Cards";
 
 const ActualResults = () => {
   const testimonials = [

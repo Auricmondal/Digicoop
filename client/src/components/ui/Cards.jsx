@@ -1,8 +1,8 @@
 import React from "react";
 import { ButtonFlippedReveal } from "../ui/Buttons";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
-import QuotationVector from "../../assets/icons/QuotationVector.svg";
-import TestimonialBG from "../../assets/images/solutions-bg.webp";
+import QuotationVector from "@/assets/icons/QuotationVector.svg";
+import TestimonialBG from "@/assets/images/solutions-bg.webp";
 
 export function SolutionCard({ image, title, subtitle, buttontext }) {
   return (
@@ -84,13 +84,21 @@ export function QuoteCard({ quote }) {
   );
 }
 
-export function TestimonialCard({ efficiency, testimonial, author, designation }) {
+export function TestimonialCard({
+  efficiency,
+  testimonial,
+  author,
+  designation,
+}) {
   return (
     <div className="group relative mx-auto bg-white shadow-md rounded-xl p-6 overflow-hidden">
       {/* Background image layer */}
       <div
         className="absolute inset-0 bg-cover bg-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out bg-blend-hard-light"
-        style={{ backgroundImage: `url('${TestimonialBG}')`, backgroundColor: 'rgba(255,255,255,0.5)' }}
+        style={{
+          backgroundImage: `url('${TestimonialBG}')`,
+          backgroundColor: "rgba(255,255,255,0.5)",
+        }}
       />
 
       {/* Content layer */}
@@ -100,7 +108,9 @@ export function TestimonialCard({ efficiency, testimonial, author, designation }
           <p className="text-left text-sm text-gray-400">
             Operational efficiency improved by
           </p>
-          <h2 className="text-right text-black group-hover:text-white text-5xl md:text-8xl font-bold">{efficiency}</h2>
+          <h2 className="text-right text-black group-hover:text-white text-5xl md:text-8xl font-bold">
+            {efficiency}
+          </h2>
         </div>
 
         <hr className="border-gray-600 group-hover:border-gray-200 mb-2" />
@@ -112,7 +122,9 @@ export function TestimonialCard({ efficiency, testimonial, author, designation }
 
         {/* Author */}
         <div className="mt-4">
-          <p className="text-left text-gray-900 group-hover:text-gray-200 font-medium">— {author}</p>
+          <p className="text-left text-gray-900 group-hover:text-gray-200 font-medium">
+            — {author}
+          </p>
           <p className="text-left text-sm text-primary group-hover:text-tint">
             {designation}
           </p>

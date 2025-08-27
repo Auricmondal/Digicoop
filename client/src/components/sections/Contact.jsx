@@ -1,18 +1,18 @@
 import React, { useState } from "react";
-import { GradientBadge } from "../ui/Badges";
-import SectionWrapper from "../../layouts/SectionWrapper";
-import { ButtonFlippedReveal } from "../ui/Buttons";
-import useSubmit from "../../hooks/useSubmit"; // Adjust path as needed
-import AnimatedHeader from "../ui/AnimatedHeader";
+import { GradientBadge } from "@/components/ui/Badges";
+import SectionWrapper from "@/layouts/SectionWrapper";
+import { ButtonFlippedReveal } from "@/components/ui/Buttons";
+import useSubmit from "@/hooks/useSubmit"; // Adjust path as needed
+import AnimatedHeader from "@/components/ui/AnimatedHeader";
 
 const ContactUs = () => {
   const [validationErrors, setValidationErrors] = useState({});
 
-  // Mock submit function - replace with your actual API call
+  //! Mock submit function - replace with your actual API call
   const submitContactForm = async (data) => {
-    // Simulate API call
+    //! Simulate API call
     console.log("Submitting contact form:", data);
-    // Add your actual form submission logic here
+    // TODO: Add actual form submission logic here
   };
 
   const { formData, handleChange, handleSubmit, loading, error } = useSubmit(

@@ -1,9 +1,9 @@
 import React from "react";
-import cooperativeGuy from "../../assets/images/cooperativeguy.webp";
-import groupWork from "../../assets/images/group-work.webp";
-import SimpleCard from "../ui/SimpleCard";
-import SectionWrapper from "../../layouts/SectionWrapper";
-import AnimatedHeader from "../ui/AnimatedHeader";
+import cooperativeGuy from "@/assets/images/cooperativeguy.webp";
+import groupWork from "@/assets/images/group-work.webp";
+import SimpleCard from "@/components/ui/SimpleCard";
+import SectionWrapper from "@/layouts/SectionWrapper";
+import AnimatedHeader from "@/components/ui/AnimatedHeader";
 
 const HowThisWorks = () => {
   const subsections = [

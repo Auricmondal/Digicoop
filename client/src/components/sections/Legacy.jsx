@@ -1,8 +1,8 @@
 import React from "react";
-import legacyImage from "../../assets/images/legacy.webp";
-import SectionWrapper from "../../layouts/SectionWrapper";
-import { QuoteCard } from "../ui/Cards";
-import AnimatedHeader from "../ui/AnimatedHeader";
+import legacyImage from "@/assets/images/legacy.webp";
+import SectionWrapper from "@/layouts/SectionWrapper";
+import { QuoteCard } from "@/components/ui/Cards";
+import AnimatedHeader from "@/components/ui/AnimatedHeader";
 
 const LegacySection = () => {
   const quotes = [

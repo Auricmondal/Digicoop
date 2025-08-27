@@ -1,6 +1,6 @@
 import LeftSection from "./LeftHero";
 import RightSection from "./RightHero";
-import SectionWrapper from "../../layouts/SectionWrapper";
+import SectionWrapper from "@/layouts/SectionWrapper";
 
 const Hero = () => {
   return (

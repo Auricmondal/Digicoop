@@ -2,7 +2,7 @@
 import React, { useState, useEffect, useRef } from "react";
 
 import { ArrowLeft, ArrowRight } from "lucide-react";
-import ArrowControls from "../ui/ArrowControls";
+import ArrowControls from "@/components/ui/ArrowControls";
 
 const Testimonial = () => {
   const [isPaused, setIsPaused] = useState(false);

@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import useDirectionReversal from "../../../hooks/useDirectionReversal";
+import useDirectionReversal from "@/hooks/useDirectionReversal";
 
 const InfiniteScrollContainer = ({
   children,

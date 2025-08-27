@@ -1,9 +1,9 @@
 import React from "react";
-import { ButtonFlippedReveal } from "../ui/Buttons";
+import { ButtonFlippedReveal } from "@/components/ui/Buttons";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
-import SectionWrapper from "../../layouts/SectionWrapper";
-import CTAImageLeft from "../../assets/images/cooperatives.webp";
-import CTAImageRight from "../../assets/images/cooperativeguy.webp";
+import SectionWrapper from "@/layouts/SectionWrapper";
+import CTAImageLeft from "@/assets/images/cooperatives.webp";
+import CTAImageRight from "@/assets/images/cooperativeguy.webp";
 
 const FinalCTA = () => {
   return (
