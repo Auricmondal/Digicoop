@@ -8,8 +8,14 @@ const DesktopMenu = ({ solutionItems, handleNavigation }) => {
   const navbarRef = React.useRef(null);
   const location = useLocation();
 
-  const activeClass = location.pathname === "/" ? "text-blue-600 font-medium" : "text-white hover:text-gray-600 font-medium";
-  const inactiveClass = location.pathname === "/" ? "text-gray-700 hover:text-blue-600 font-medium" : "text-white hover:text-gray-600 font-medium";
+  const activeClass =
+    location.pathname === "/"
+      ? "text-blue-600 font-medium"
+      : "text-white hover:text-cyan-200 font-medium";
+  const inactiveClass =
+    location.pathname === "/"
+      ? "text-gray-700 hover:text-blue-600 font-medium"
+      : "text-white hover:text-cyan-200 font-medium";
 
   return (
     <nav
@@ -45,10 +51,11 @@ const DesktopMenu = ({ solutionItems, handleNavigation }) => {
           {solutionItems.map((item, index) => (
             <button
               key={index}
-              onClick={() =>
-                handleNavigation(
-                  `/solutions/${item.toLowerCase().replace(" ", "-")}`
-                )
+              onClick={
+                () => handleNavigation(`/solutions`)
+                // handleNavigation(
+                //   `/solutions/${item.toLowerCase().replace(" ", "-")}`
+                // )
               }
               className="w-full text-left block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 transition-colors duration-150"
             >
@@ -69,13 +76,13 @@ const DesktopMenu = ({ solutionItems, handleNavigation }) => {
       </NavLink>
 
       <NavLink
-        onClick={() => handleNavigation("/about/#contact")}
+        onClick={() => handleNavigation("/contact")}
         className={`transition-colors duration-200 px-2 py-1 rounded-md ${
-          location.pathname.startsWith("/about/#contact")
+          location.pathname.startsWith("/contact")
             ? activeClass
             : inactiveClass
         }`}
-        isActive={location.pathname.startsWith("/about/#contact")}
+        isActive={location.pathname.startsWith("/contact")}
       >
         Contact
       </NavLink>
@@ -84,7 +91,9 @@ const DesktopMenu = ({ solutionItems, handleNavigation }) => {
         <ButtonOutlineHoverSolid
           onClick={() => handleNavigation("/login")}
           className={`h-[58px] rounded-2xl px-4 text-center ${
-            location.pathname.startsWith("/about")
+            location.pathname.startsWith("/about") ||
+            location.pathname.startsWith("/solutions") ||
+            location.pathname.startsWith("/contact")
               ? "border-white text-white"
               : "border-dark-tint text-dark-tint"
           } hover:text-white hover:bg-dark-tint`}
@@ -99,7 +108,9 @@ const DesktopMenu = ({ solutionItems, handleNavigation }) => {
           }
           className={`rounded-2xl py-5 px-4 h-[58px] flex gap-1 items-center justify-center
             ${
-              location.pathname.startsWith("/about")
+              location.pathname.startsWith("/about") ||
+              location.pathname.startsWith("/solutions") ||
+              location.pathname.startsWith("/contact")
                 ? "bg-white text-primary"
                 : "bg-primary text-white"
             }

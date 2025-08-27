@@ -86,8 +86,11 @@ const MobileMenu = ({
                         key={index}
                         onClick={() =>
                           handleNavigation(
-                            `/solutions/${item.toLowerCase().replace(" ", "-")}`
+                            `/solutions`
                           )
+                          // handleNavigation(
+                          //   `/solutions/${item.toLowerCase().replace(" ", "-")}`
+                          // )
                         }
                         className="w-full text-right block px-4 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors duration-200"
                       >
@@ -107,9 +110,9 @@ const MobileMenu = ({
               </NavLink>
 
               <NavLink
-                onClick={() => handleNavigation("/about/#contact")}
-                className={`w-full text-right flex items-center justify-end px-4 py-3 text-base hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors duration-200 ${location.pathname.startsWith("/about/#contact") ? activeClass : inactiveClass}`}
-                isActive={location.pathname.startsWith("/about/#contact")}
+                onClick={() => handleNavigation("/contact")}
+                className={`w-full text-right flex items-center justify-end px-4 py-3 text-base hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors duration-200 ${location.pathname.startsWith("/contact") ? activeClass : inactiveClass}`}
+                isActive={location.pathname.startsWith("/contact")}
               >
                 Contact
               </NavLink>
@@ -120,7 +123,7 @@ const MobileMenu = ({
         <div className="flex flex-col p-4 mt-4 border-gray-200 space-y-3 bottom-0">
           <ButtonOutlineHoverSolid
             onClick={() => handleNavigation("/login")}
-            className={"h-[58px] rounded-2xl px-4 text-center"}
+            className={"h-[58px] rounded-2xl px-4 text-center border-dark-tint text-dark-tint hover:text-white hover:bg-dark-tint"}
           >
             Log In
           </ButtonOutlineHoverSolid>
@@ -132,7 +135,7 @@ const MobileMenu = ({
             }
             fullWidth={true}
             className={
-              "bg-primary text-white rounded-2xl py-5 px-4 h-[58px] tify-center w-full"
+              "flex bg-primary text-white rounded-2xl py-5 px-4 h-[58px] justify-center w-full"
             }
           >
             Get Started
