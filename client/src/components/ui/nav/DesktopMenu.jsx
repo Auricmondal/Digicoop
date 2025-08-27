@@ -8,8 +8,8 @@ const DesktopMenu = ({ solutionItems, handleNavigation }) => {
   const navbarRef = React.useRef(null);
   const location = useLocation();
 
-  const activeClass = "text-blue-600 font-medium";
-  const inactiveClass = "text-gray-700 hover:text-blue-600 font-medium";
+  const activeClass = location.pathname === "/" ? "text-blue-600 font-medium" : "text-white hover:text-gray-600 font-medium";
+  const inactiveClass = location.pathname === "/" ? "text-gray-700 hover:text-blue-600 font-medium" : "text-white hover:text-gray-600 font-medium";
 
   return (
     <nav
@@ -19,7 +19,9 @@ const DesktopMenu = ({ solutionItems, handleNavigation }) => {
     >
       <NavLink
         onClick={() => handleNavigation("/")}
-        className={`hover:text-blue-600 transition-colors duration-200 px-2 py-1 rounded-md ${location.pathname === "/" ? activeClass : inactiveClass}`}
+        className={`transition-colors duration-200 px-2 py-1 rounded-md ${
+          location.pathname === "/" ? activeClass : inactiveClass
+        }`}
         isActive={location.pathname === "/"}
       >
         Home
@@ -28,7 +30,11 @@ const DesktopMenu = ({ solutionItems, handleNavigation }) => {
       <div className="group relative">
         <NavLink
           toggle={true}
-          className={`hover:text-blue-600 transition-colors duration-200 px-2 py-1 rounded-md ${location.pathname.startsWith("/solutions") ? activeClass : inactiveClass}`}
+          className={`transition-colors duration-200 px-2 py-1 rounded-md ${
+            location.pathname.startsWith("/solutions")
+              ? activeClass
+              : inactiveClass
+          }`}
           isActive={location.pathname.startsWith("/solutions")}
         >
           Solution
@@ -43,7 +49,7 @@ const DesktopMenu = ({ solutionItems, handleNavigation }) => {
                   `/solutions/${item.toLowerCase().replace(" ", "-")}`
                 )
               }
-              className="w-full text-left block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-150"
+              className="w-full text-left block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 transition-colors duration-150"
             >
               {item}
             </button>
@@ -53,7 +59,9 @@ const DesktopMenu = ({ solutionItems, handleNavigation }) => {
 
       <NavLink
         onClick={() => handleNavigation("/about")}
-        className={`hover:text-blue-600 transition-colors duration-200 px-2 py-1 rounded-md ${location.pathname.startsWith("/about") ? activeClass : inactiveClass}`}
+        className={`transition-colors duration-200 px-2 py-1 rounded-md ${
+          location.pathname.startsWith("/about") ? activeClass : inactiveClass
+        }`}
         isActive={location.pathname.startsWith("/about")}
       >
         About
@@ -61,7 +69,11 @@ const DesktopMenu = ({ solutionItems, handleNavigation }) => {
 
       <NavLink
         onClick={() => handleNavigation("/about/#contact")}
-        className={`hover:text-blue-600 transition-colors duration-200 px-2 py-1 rounded-md ${location.pathname.startsWith("/about/#contact") ? activeClass : inactiveClass}`}
+        className={`transition-colors duration-200 px-2 py-1 rounded-md ${
+          location.pathname.startsWith("/about/#contact")
+            ? activeClass
+            : inactiveClass
+        }`}
         isActive={location.pathname.startsWith("/about/#contact")}
       >
         Contact
@@ -70,7 +82,11 @@ const DesktopMenu = ({ solutionItems, handleNavigation }) => {
       <div className="hidden md:flex items-center space-x-4">
         <ButtonOutlineHoverSolid
           onClick={() => handleNavigation("/login")}
-          className={"h-[58px] rounded-2xl px-4 text-center"}
+          className={`h-[58px] rounded-2xl px-4 text-center ${
+            location.pathname.startsWith("/about")
+              ? "border-white text-white"
+              : "border-dark-tint text-dark-tint"
+          } hover:text-white hover:bg-dark-tint`}
         >
           Log In
         </ButtonOutlineHoverSolid>
@@ -80,9 +96,13 @@ const DesktopMenu = ({ solutionItems, handleNavigation }) => {
           hoverIcon={
             <ArrowUpRight className="text-primary bg-white rounded-full" />
           }
-          className={
-            "bg-primary text-white rounded-2xl py-5 px-4 h-[58px] flex gap-1 items-center justify-center"
-          }
+          className={`rounded-2xl py-5 px-4 h-[58px] border-[2px] flex gap-1 items-center justify-center
+            ${
+              location.pathname.startsWith("/about")
+                ? "bg-white text-primary"
+                : "bg-tint text-white"
+            }
+            `}
         >
           Get Started
         </ButtonFlippedReveal>
