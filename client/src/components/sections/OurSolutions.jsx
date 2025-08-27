@@ -24,9 +24,9 @@ const OurSolutions = () => {
   ];
 
   return (
-    <SectionWrapper className="">
+    <SectionWrapper className="max-w-[1460px] mx-auto">
       {/*Parent Background*/}
-      <div className="flex flex-col items-center gap-4 max-w-[1460px] mx-auto">
+      <div className="flex flex-col items-center gap-4">
         <GradientBadge text="Our Solutions" />
 
         {/* Title */}
