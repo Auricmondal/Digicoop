@@ -5,7 +5,7 @@ import { GradientBadge } from "../ui/Badges";
 import { Mouse, ArrowRight, ArrowUpRight } from "lucide-react";
 import bgImage from "../../assets/images/solutions-bg.webp";
 
-const Hero = () => {
+const SolutionsHero = () => {
   return (
     <div
       className=""
@@ -67,4 +67,4 @@ const Hero = () => {
   );
 };
 
-export default Hero;
+export default SolutionsHero;
