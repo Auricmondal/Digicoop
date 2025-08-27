@@ -4,6 +4,7 @@ import DemoCard from "../ui/DemoCard";
 import { GradientBadge } from "../ui/Badges";
 import SectionWrapper from "../../layouts/SectionWrapper";
 import ScrollStack,{ ScrollStackItem } from "../ui/ScrollStack";
+import AnimatedHeader from "../ui/AnimatedHeader";
 
 const HowThisWorks = ({ isStraight = false }) => {
   const subsections = [
@@ -37,22 +38,23 @@ const HowThisWorks = ({ isStraight = false }) => {
     <SectionWrapper className="bg-tint">
       {/* ^ background Tint #EAF2FF */}
 
-      <div className="max-w-[1460px] mx-auto">
+      <div className="max-w-[1460px] mx-auto relative z-10">
         {/* Section Header */}
         <div className="flex flex-col justify-center text-center gap-4">
           <span>
             <GradientBadge text={"How This Works"} />
           </span>
 
-          {/* Header content container */}
-
-          <div className="w-full max-w-[90%] sm:max-w-[600px] lg:max-w-[724px] h-auto lg:h-[168px] mx-auto flex flex-col justify-center gap-2 lg:gap-[10px] opacity-100 lg:pb-2">
-            <h2 className="text-[1.5rem] sm:text-[2rem] lg:text-[2.5rem] font-semibold leading-[1.1] tracking-[-0.01em] text-primary-dark mb-4 ">
-              From Chaos to{" "}
-              <span className="text-[1.5rem] sm:text-[2rem] lg:text-[2.5rem] font-semibold leading-[1.1] tracking-[-0.01em] bg-gradient-to-r from-primary to-dark-tint bg-clip-text text-transparent">
-                Clarity
-              </span>
-            </h2>
+          <div className="w-full max-w-[90%] sm:max-w-[600px] lg:max-w-[724px] h-auto lg:h-[168px] mx-auto flex flex-col justify-center gap-2 lg:gap-[10px] opacity-100">
+            <AnimatedHeader
+              words={[
+                { text: "From", isGradient: false },
+                { text: "Chaos", isGradient: false },
+                { text: "to", isGradient: false },
+                { text: "Clarity", isGradient: true },
+              ]}
+              className="text-primary-dark text-center text-[1.5rem] sm:text-[2rem] lg:text-[2.5rem] font-semibold leading-[1.1] tracking-[-0.01em] justify-center mb-4"
+            />
 
             <p className="text-[0.875rem] sm:text-[1rem] lg:text-[1.25rem] font-normal leading-[1.6] tracking-[0] text-center text-black ">
               DigiCoop turns complex cooperative tasks into a smooth digital
@@ -63,28 +65,30 @@ const HowThisWorks = ({ isStraight = false }) => {
         </div>
 
         {/* Subsections */}
-        <ScrollStack 
-          className="h-screen"
-          itemDistance={150}
-          itemScale={0.05}
-          itemStackDistance={40}
-          stackPosition="30%"
-          scaleEndPosition="15%"
-          baseScale={0.9}
-          rotationAmount={0}
-          blurAmount={1}
-        >
-          {subsections.map((subsection, index) => (
-            <ScrollStackItem key={index}>
-              <DemoCard
-                subsection={subsection}
-                index={index}
-                isReversed={isStraight ? false : index % 2 === 0}
-                isStraight={isStraight}
-              />
-            </ScrollStackItem>
-          ))}
-        </ScrollStack>
+        <div className="relative overflow-hidden">
+          <ScrollStack 
+            className=""
+            itemDistance={150}
+            itemScale={0.05}
+            itemStackDistance={40}
+            stackPosition="30%"
+            scaleEndPosition="15%"
+            baseScale={0.9}
+            rotationAmount={0}
+            blurAmount={0}
+          >
+            {subsections.map((subsection, index) => (
+              <ScrollStackItem key={index}>
+                <DemoCard
+                  subsection={subsection}
+                  index={index}
+                  isReversed={isStraight ? false : index % 2 === 0}
+                  isStraight={isStraight}
+                />
+              </ScrollStackItem>
+            ))}
+          </ScrollStack>
+        </div>
       </div>
     </SectionWrapper>
   );

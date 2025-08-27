@@ -47,7 +47,6 @@ const ScrollStack = ({
 
     isUpdatingRef.current = true;
 
-    // Use window scroll instead of container scroll
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
     const containerHeight = window.innerHeight;
     const containerRect = container.getBoundingClientRect();
@@ -63,23 +62,51 @@ const ScrollStack = ({
       const itemRect = item.getBoundingClientRect();
       const itemTop = itemRect.top + scrollTop;
       
-      const triggerStart = itemTop - containerHeight + stackPositionPx - (itemStackDistance * i);
+      // Start stacking only after the first card is completely in view
+      const firstCardFullyVisible = i === 0 ? 
+        itemRect.top <= containerHeight * 0.1 : // First card is 90% visible
+        true;
+      
+      // Adjust trigger points to start after first card is in focus
+      const triggerStart = firstCardFullyVisible ? 
+        itemTop - containerHeight + stackPositionPx - (itemStackDistance * i) :
+        itemTop + itemRect.height; // Delay until first card is fully visible
+        
       const triggerEnd = itemTop - containerHeight + scaleEndPositionPx;
-      const pinStart = itemTop - containerHeight + stackPositionPx - (itemStackDistance * i);
+      const pinStart = triggerStart;
       const pinEnd = containerTop + container.offsetHeight - containerHeight / 2;
 
       const scaleProgress = calculateProgress(scrollTop, triggerStart, triggerEnd);
-      const targetScale = baseScale + (i * itemScale);
-      const scale = 1 - scaleProgress * (1 - targetScale);
+      
+      // Only scale cards after the first one, or when stacking begins
+      let scale = 1;
+      if (i === 0) {
+        // First card maintains its size until stacking begins
+        scale = firstCardFullyVisible && scrollTop >= triggerStart ? 
+          1 - scaleProgress * (1 - baseScale) : 1;
+      } else {
+        const targetScale = baseScale + (i * itemScale);
+        scale = 1 - scaleProgress * (1 - targetScale);
+      }
+      
       const rotation = rotationAmount ? i * rotationAmount * scaleProgress : 0;
 
       let translateY = 0;
       const isPinned = scrollTop >= pinStart && scrollTop <= pinEnd;
       
-      if (isPinned) {
-        translateY = scrollTop - itemTop + containerHeight - stackPositionPx - (itemStackDistance * i);
-      } else if (scrollTop > pinEnd) {
-        translateY = pinEnd - itemTop + containerHeight - stackPositionPx - (itemStackDistance * i);
+      if (isPinned && firstCardFullyVisible) {
+        // Constrain the movement within the container bounds
+        const maxTranslateY = containerRect.height - (itemRect.height * scale);
+        translateY = Math.min(
+          scrollTop - itemTop + containerHeight - stackPositionPx - (itemStackDistance * i),
+          maxTranslateY
+        );
+      } else if (scrollTop > pinEnd && firstCardFullyVisible) {
+        const maxTranslateY = containerRect.height - (itemRect.height * scale);
+        translateY = Math.min(
+          pinEnd - itemTop + containerHeight - stackPositionPx - (itemStackDistance * i),
+          maxTranslateY
+        );
       }
 
       const newTransform = {
@@ -150,10 +177,9 @@ const ScrollStack = ({
       wrapper.style.perspective = '1000px';
       wrapper.style.webkitPerspective = '1000px';
       wrapper.style.position = 'relative';
-      wrapper.style.zIndex = '1';
+      wrapper.style.zIndex = String(wrappersRef.current.length - i);
     });
 
-    // Listen to window scroll instead of container scroll
     window.addEventListener('scroll', handleScroll, { passive: true });
     updateWrapperTransforms();
 
