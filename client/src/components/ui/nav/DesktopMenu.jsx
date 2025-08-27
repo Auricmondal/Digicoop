@@ -89,12 +89,11 @@ const DesktopMenu = ({ solutionItems, handleNavigation }) => {
         <ButtonOutlineHoverSolid
           onClick={() => handleNavigation("/login")}
           className={`h-[58px] rounded-2xl px-4 text-center hover:text-white hover:bg-dark-tint
-            ${location.pathname.startsWith("/solutions") ? "border-dark-tint" : "border-white"}
             ${
-            location.pathname.startsWith("/about")
-              ? "border-white text-white"
-              : "border-dark-tint text-dark-tint"
-          }`}
+              location.pathname.startsWith("/about")
+                ? "border-white text-white"
+                : "border-dark-tint text-dark-tint"
+            }`}
         >
           Log In
         </ButtonOutlineHoverSolid>
@@ -105,7 +104,11 @@ const DesktopMenu = ({ solutionItems, handleNavigation }) => {
             <ArrowUpRight className="text-primary bg-white rounded-full" />
           }
           className={`rounded-2xl py-5 px-4 h-[58px] flex gap-1 items-center justify-center
-            ${location.pathname.startsWith("/solutions") ? "border-dark-tint" : "border-white"}
+            ${
+              location.pathname.startsWith("/solutions")
+                ? "border-dark-tint"
+                : "border-white"
+            }
             ${
               location.pathname.startsWith("/about")
                 ? "bg-white text-primary"
