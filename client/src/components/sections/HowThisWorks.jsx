@@ -39,7 +39,7 @@ const HowThisWorks = ({ isStraight = false }) => {
 
       <div className="max-w-[1460px] mx-auto">
         {/* Section Header */}
-        <div className="flex flex-col justify-center text-center gap-4">
+        <div className="flex flex-col justify-center text-center gap-4 md:gap-2">
           <span>
             <GradientBadge text={"How This Works"} />
           </span>
@@ -81,6 +81,25 @@ const HowThisWorks = ({ isStraight = false }) => {
                   </div>
                 ))}
         </ScrollCardSection>
+
+        <div className="space-y-16 lg:space-y-24 md:hidden">
+          {subsections.map((subsection, index) => (
+            <React.Fragment key={index}>
+              <DemoCard
+                subsection={subsection}
+                index={index}
+                isReversed={isStraight ? false : index % 2 === 0}
+                isStraight={isStraight}
+              />
+
+              {/* Responsive Divider Line - Only show between sections (not after last one) */}
+              {index < subsections.length - 1 && (
+                <hr className="w-full lg:hidden mx-auto border-0 border-t border-dark-tint/80" />
+              )}
+            </React.Fragment>
+          ))}
+        </div>
+
       </div>
     </SectionWrapper>
   );
