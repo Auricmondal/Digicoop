@@ -1,13 +1,18 @@
-export function GradientBadge({ text }) {
+export function GradientBadge({
+  text,
+  textColor = "text-[#00286B]",
+  borderGradient = "from-[rgba(0, 0, 150)] to-[rgba(0, 0, 150)]",
+  backgroundColor = "from-[#CAE2FF] to-[#FBFCFF]",
+}) {
   return (
-    <span className="  p-[8px_32px] rounded-full opacity-100 inline-flex items-center justify-center text-[#00286B] text-xs md:text-sm font-medium bg-gradient-to-r from-[rgba(70,127,253,0.21)] to-[rgba(234,242,255,0.21)] tint-border-gradient ">
-      {text}
+    <span
+      className={`inline-block p-[1px] rounded-full bg-gradient-to-r ${borderGradient}`}
+    >
+      <span
+        className={` p-[8px_32px] rounded-full opacity-100 inline-flex items-center justify-center ${textColor} text-xs md:text-sm font-medium bg-gradient-to-r ${backgroundColor}`}
+      >
+        {text}
+      </span>
     </span>
-  );
-}
-
-export function AboutGradientBadge({ text }) {
-  return (
-    <span className="bg-gradient-to-r from-[#467FFD] to-[#EAF2FF] w-[208px] h-[34px] p-[8px_32px] rounded-[48px] opacity-100 inline-flex items-center justify-center text-[#00286B] text-xs md:text-sm font-medium tint-border-gradient">{text}</span>
   );
 }

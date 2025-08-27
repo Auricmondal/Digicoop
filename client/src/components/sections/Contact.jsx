@@ -190,9 +190,10 @@ const ContactUs = () => {
           </div>
 
           <ButtonFlippedReveal
-            className={`bg-primary text-white rounded-2xl py-5 px-4 h-[58px] border-[2px] flex gap-1 items-center justify-center ${
+            className={`bg-primary text-white rounded-2xl py-5 px-4 h-[58px] flex gap-1 items-center justify-center ${
               loading ? "opacity-50 cursor-not-allowed" : ""
             }`}
+            fullWidth={true}
             type="submit"
             disabled={loading}
           >

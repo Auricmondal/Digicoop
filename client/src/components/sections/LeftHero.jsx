@@ -37,7 +37,7 @@ export default function LeftSection() {
             <ArrowUpRight className="text-primary bg-white rounded-full" />
           }
           className={
-            "bg-primary text-white rounded-2xl py-5 px-4 h-[58px] border-[2px] flex gap-1 items-center justify-center"
+            "bg-primary text-white rounded-2xl py-5 px-4 h-[58px] flex gap-1 items-center justify-center"
           }
         >
           Get Started
