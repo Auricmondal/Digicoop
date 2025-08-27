@@ -49,15 +49,15 @@ export function ButtonFlippedReveal({
 }
 
 export function ButtonOutlineHoverSolid({
-  className,
   children,
   onClick,
+  className='border-dark-tint text-dark-tint hover:text-white hover:bg-dark-tint',
   ...props
 }) {
   return (
     <button
       onClick={onClick}
-      className={`border-2 border-dark-tint text-dark-tint hover:text-white hover:bg-dark-tint ${className} bg-transparent text-[15px] md:text-[20px]`}
+      className={`border-2 ${className} bg-transparent text-[15px] md:text-[20px]`}
       {...props}
     >
       {children}
