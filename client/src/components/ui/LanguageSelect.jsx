@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "flag-icons/css/flag-icons.min.css";
 
 const LanguageSelect = () => {
   const [language, setLanguage] = useState("en");
