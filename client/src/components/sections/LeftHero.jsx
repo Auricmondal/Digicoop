@@ -10,10 +10,10 @@ import AnimatedHeader from "@/components/ui/AnimatedHeader.jsx";
 
 export default function LeftSection() {
   return (
-    <div className="h-full flex flex-col gap-6 text-center items-center md:text-start  justify-center md:items-start">
+    <div className="h-full flex flex-col gap-6 text-center items-center lg:text-start  justify-center lg:items-start">
       <GradientBadge text={"Built For Cooperatives"} />
 
-      <div className="text-4xl md:text-5xl lg:text-7xl font-semibold flex flex-wrap justify-center md:justify-start items-center">
+      <div className="text-4xl md:text-5xl lg:text-7xl font-semibold flex flex-wrap justify-center lg:justify-start items-center">
         <AnimatedHeader
           words={[
             { text: "Powering", isGradient: false },
@@ -50,7 +50,7 @@ export default function LeftSection() {
           Book Demo
         </ButtonOutlineHoverSolid>
       </div>
-      <div className="text-custom-neutral-500 font-normal text-[16px] leading-[100%] tracking-[-0.022em] capitalize hidden md:flex gap-1 items-center">
+      <div className="text-custom-neutral-500 font-normal text-[16px] leading-[100%] tracking-[-0.022em] capitalize hidden lg:flex gap-1 items-center">
         <Mouse />
         Scroll Down
       </div>
