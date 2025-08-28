@@ -2,7 +2,6 @@
 
 @import "tailwindcss";
 
-@import "flag-icons/css/flag-icons.min.css";
 
 @theme {
   --color-primary-dark: #001f52;

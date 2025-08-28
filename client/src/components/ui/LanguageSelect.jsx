@@ -1,19 +1,20 @@
 import React, { useState } from "react";
-
+import german from "@/assets/icons/german.webp";
+import uk from "@/assets/icons/uk.webp";
 const LanguageSelect = () => {
   const [language, setLanguage] = useState("en");
   const [open, setOpen] = useState(false);
 
   const languages = {
-    en: { label: "English", code: "gb" }, // UK flag
-    de: { label: "Deutsch", code: "de" }, // Germany flag
+    en: { label: "English", img: german }, // UK flag
+    de: { label: "Deutsch", img: uk }, // Germany flag
   };
 
   return (
     <div className="border border-black/15 rounded-md">
       {/* Desktop: flag-only */}
       <div className="hidden [@media(min-width:940px)]:flex items-center gap-1">
-        {Object.entries(languages).map(([key, { label, code }]) => (
+        {Object.entries(languages).map(([key, { label, img }]) => (
           <button
             key={key}
             onClick={() => setLanguage(key)}
@@ -22,8 +23,9 @@ const LanguageSelect = () => {
             }`}
             title={label}
           >
-            <span
-              className={`fi fi-${code}`}
+            <img
+              src={img}
+              alt={label}
               style={{
                 width: "1.5rem",
                 height: "1.5rem",
@@ -41,8 +43,9 @@ const LanguageSelect = () => {
           className="w-full flex items-center justify-between border border-black/15 rounded-md p-2 bg-white"
         >
           <span className="flex items-center gap-2">
-            <span
-              className={`fi fi-${languages[language].code}`}
+            <img
+              src={languages[language].img}
+              alt={languages[language].label}
               style={{ width: "1.5rem", height: "1.5rem" }}
             />
             {languages[language].label}
@@ -52,7 +55,7 @@ const LanguageSelect = () => {
 
         {open && (
           <ul className="absolute top-full left-0 w-full bg-white border border-black/15 rounded-md shadow-md z-10">
-            {Object.entries(languages).map(([key, { label, code }]) => (
+            {Object.entries(languages).map(([key, { label, img }]) => (
               <li key={key}>
                 <button
                   onClick={() => {
@@ -61,8 +64,9 @@ const LanguageSelect = () => {
                   }}
                   className="w-full flex items-center gap-2 p-2 hover:bg-gray-100"
                 >
-                  <span
-                    className={`fi fi-${code}`}
+                  <img
+                    src={img}
+                    alt={label}
                     style={{ width: "1.5rem", height: "1.5rem" }}
                   />
                   {label}
