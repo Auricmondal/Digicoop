@@ -30,7 +30,7 @@ export default function LeftSection() {
         Audit-Ready Documentation — With One Simple, Compliant Platform.
       </p>
 
-      <div className="flex gap-4 mt-4 mb-20 flex-col md:flex-row w-full md:w-auto">
+      <div className="flex gap-4 mt-4 mb-20 justify-center lg:justify-start w-full md:w-auto">
         <ButtonFlippedReveal
           icon={<ArrowRight />}
           hoverIcon={
@@ -43,7 +43,9 @@ export default function LeftSection() {
           Get Started
         </ButtonFlippedReveal>
         <ButtonOutlineHoverSolid
-          className={"h-[58px] rounded-2xl px-4 text-center border-dark-tint text-dark-tint hover:text-white hover:bg-dark-tint"}
+          className={
+            "h-[58px] rounded-2xl px-4 text-center border-dark-tint text-dark-tint hover:text-white hover:bg-dark-tint"
+          }
         >
           Book Demo
         </ButtonOutlineHoverSolid>

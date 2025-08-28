@@ -24,7 +24,7 @@ const AboutHero = () => {
               { text: "Digital", isGradient: false },
               { text: "Future", isGradient: false },
             ]}
-            className="text-white text-center text-[28px] md:text-[40px] lg:text-5xl font-semibold  justify-center"
+            className="text-white text-center text-[28px] md:text-[40px] lg:text-5xl font-semibold leading-none justify-center"
           />
         </div>
       </div>
