@@ -3,6 +3,7 @@ import NavLink from "../NavLink";
 import { ButtonFlippedReveal, ButtonOutlineHoverSolid } from "../Buttons";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { useLocation } from "react-router-dom";
+import LanguageSelect from "../LanguageSelect";
 
 const DesktopMenu = ({ solutionItems, handleNavigation }) => {
   const navbarRef = React.useRef(null);
@@ -19,10 +20,11 @@ const DesktopMenu = ({ solutionItems, handleNavigation }) => {
 
   return (
     <nav
-      className="hidden [@media(min-width:900px)]:flex items-center space-x-2"
+      className="hidden [@media(min-width:940px)]:flex items-center space-x-2"
       id="navbar"
       ref={navbarRef}
     >
+      <LanguageSelect />
       <NavLink
         onClick={() => handleNavigation("/")}
         className={`transition-colors duration-200 px-2 py-1 rounded-md ${

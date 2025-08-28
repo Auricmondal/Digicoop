@@ -1,15 +1,15 @@
-import { AlignLeft, X } from 'lucide-react'
-import React from 'react'
+import { AlignLeft, X } from "lucide-react";
+import React from "react";
 
 const MenuButton = ({ isOpen, toggleMenu }) => {
   return (
     <button
       onClick={toggleMenu}
-      className="[@media(min-width:900px)]:hidden inline-flex items-center justify-center p-2 rounded-full shadow-md text-gray-700 hover:text-blue-600 bg-blue-100 transition-colors duration-150"
+      className="[@media(min-width:940px)]:hidden inline-flex items-center justify-center p-2 rounded-full shadow-md text-gray-700 hover:text-blue-600 bg-blue-100 transition-colors duration-150"
     >
       {isOpen ? <X className="h-6 w-6" /> : <AlignLeft className="h-6 w-6" />}
     </button>
-  )
-}
+  );
+};
 
-export default MenuButton
+export default MenuButton;

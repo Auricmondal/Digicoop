@@ -32,6 +32,8 @@ export function SolutionCard({ image, title, subtitle, buttontext }) {
             }
             className="bg-tint text-primary-dark rounded-xl w-full h-[64px] flex items-center justify-center font-semibold"
             fullWidth={true}
+            isBorder={false}
+            isshadow={false}
           >
             {buttontext}
           </ButtonFlippedReveal>

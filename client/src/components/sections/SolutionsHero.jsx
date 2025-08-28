@@ -1,6 +1,9 @@
 import SectionWrapper from "@/layouts/SectionWrapper";
 import AnimatedHeader from "@/components/ui/AnimatedHeader";
-import { ButtonFlippedReveal, ButtonOutlineHoverSolid } from "@/components/ui/Buttons";
+import {
+  ButtonFlippedReveal,
+  ButtonOutlineHoverSolid,
+} from "@/components/ui/Buttons";
 import { GradientBadge } from "@/components/ui/Badges";
 import { Mouse, ArrowRight, ArrowUpRight } from "lucide-react";
 import bgImage from "@/assets/images/solutions-bg.webp";
@@ -51,7 +54,9 @@ const SolutionsHero = () => {
               Get Started
             </ButtonFlippedReveal>
             <ButtonOutlineHoverSolid
-              className={"h-[58px] rounded-2xl px-4 text-center border-dark-tint text-dark-tint hover:text-white hover:bg-dark-tint"}
+              className={
+                "h-[58px] rounded-2xl px-4 text-center border-dark-tint text-dark-tint hover:text-white hover:bg-dark-tint"
+              }
             >
               Book Demo
             </ButtonOutlineHoverSolid>

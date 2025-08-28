@@ -3,6 +3,7 @@ import { X, ChevronLeft, ArrowRight, ArrowUpRight } from "lucide-react";
 import NavLink from "../NavLink";
 import { ButtonFlippedReveal, ButtonOutlineHoverSolid } from "../Buttons";
 import { useLocation } from "react-router-dom";
+import LanguageSelect from "../LanguageSelect";
 
 const MobileMenu = ({
   isMobileMenuOpen,
@@ -19,7 +20,7 @@ const MobileMenu = ({
 
   return (
     <div
-      className={`fixed flex justify-end top-0 inset-0 z-50 [@media(min-width:900px)]:hidden transition-opacity duration-300 max-h-screen ${
+      className={`fixed flex justify-end top-0 inset-0 z-50 [@media(min-width:940px)]:hidden transition-opacity duration-300 max-h-screen ${
         isMobileMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none"
       }`}
     >
@@ -52,7 +53,9 @@ const MobileMenu = ({
             <div className="flex-1 justify-end space-y-2">
               <NavLink
                 onClick={() => handleNavigation("/")}
-                className={`w-full text-right flex items-center justify-end px-4 py-3 text-base hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors duration-200 ${location.pathname === "/" ? activeClass : inactiveClass}`}
+                className={`w-full text-right flex items-center justify-end px-4 py-3 text-base hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors duration-200 ${
+                  location.pathname === "/" ? activeClass : inactiveClass
+                }`}
                 isActive={location.pathname === "/"}
               >
                 Home
@@ -61,7 +64,11 @@ const MobileMenu = ({
               <div>
                 <NavLink
                   onClick={toggleSolutionDropdown}
-                  className={`w-full text-left flex items-center justify-end px-2 py-3 text-base hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors duration-200 ${location.pathname.startsWith("/solutions") ? activeClass : inactiveClass}`}
+                  className={`w-full text-left flex items-center justify-end px-2 py-3 text-base hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors duration-200 ${
+                    location.pathname.startsWith("/solutions")
+                      ? activeClass
+                      : inactiveClass
+                  }`}
                   isActive={location.pathname.startsWith("/solutions")}
                 >
                   <ChevronLeft
@@ -84,10 +91,8 @@ const MobileMenu = ({
                     {solutionItems.map((item, index) => (
                       <button
                         key={index}
-                        onClick={() =>
-                          handleNavigation(
-                            `/solutions`
-                          )
+                        onClick={
+                          () => handleNavigation(`/solutions`)
                           // handleNavigation(
                           //   `/solutions/${item.toLowerCase().replace(" ", "-")}`
                           // )
@@ -103,7 +108,11 @@ const MobileMenu = ({
 
               <NavLink
                 onClick={() => handleNavigation("/about")}
-                className={`w-full text-right flex items-center justify-end px-4 py-3 text-base hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors duration-200 ${location.pathname.startsWith("/about") ? activeClass : inactiveClass}`}
+                className={`w-full text-right flex items-center justify-end px-4 py-3 text-base hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors duration-200 ${
+                  location.pathname.startsWith("/about")
+                    ? activeClass
+                    : inactiveClass
+                }`}
                 isActive={location.pathname === "/about"}
               >
                 About
@@ -111,7 +120,11 @@ const MobileMenu = ({
 
               <NavLink
                 onClick={() => handleNavigation("/about#contact")}
-                className={`w-full text-right flex items-center justify-end px-4 py-3 text-base hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors duration-200 ${location.pathname.startsWith("/about#contact") ? activeClass : inactiveClass}`}
+                className={`w-full text-right flex items-center justify-end px-4 py-3 text-base hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors duration-200 ${
+                  location.pathname.startsWith("/about#contact")
+                    ? activeClass
+                    : inactiveClass
+                }`}
                 isActive={location.pathname === "/about#contact"}
               >
                 Contact
@@ -121,9 +134,12 @@ const MobileMenu = ({
         </div>
         {/* Bottom action buttons */}
         <div className="flex flex-col p-4 mt-4 border-gray-200 space-y-3 bottom-0">
+          <LanguageSelect />
           <ButtonOutlineHoverSolid
             onClick={() => handleNavigation("/login")}
-            className={"h-[58px] rounded-2xl px-4 text-center border-dark-tint text-dark-tint hover:text-white hover:bg-dark-tint"}
+            className={
+              "h-[58px] rounded-2xl px-4 text-center border-dark-tint text-dark-tint hover:text-white hover:bg-dark-tint"
+            }
           >
             Log In
           </ButtonOutlineHoverSolid>

@@ -8,6 +8,8 @@ export function ButtonFlippedReveal({
   onClick,
   fullWidth = false,
   backgroundImage = "linear-gradient(93.63deg, rgba(127, 145, 175, 1) 3.45%, rgba(153, 153, 153, 0) 117.37%)",
+  isshadow = true,
+  isBorder = true,
   ...props
 }) {
   return (
@@ -16,8 +18,8 @@ export function ButtonFlippedReveal({
         fullWidth ? "w-full" : ""
       } rounded-2xl bg-gradient-to-r`}
       style={{
-        backgroundImage: backgroundImage,
-        boxShadow: "0px 4px 9.4px 0px rgba(0, 0, 0, 0.25)",
+        backgroundImage: isBorder ? backgroundImage : "",
+        boxShadow: isshadow ? "0px 4px 9.4px 0px rgba(0, 0, 0, 0.25)" : "",
       }}
     >
       <button
@@ -51,7 +53,7 @@ export function ButtonFlippedReveal({
 export function ButtonOutlineHoverSolid({
   children,
   onClick,
-  className='border-dark-tint text-dark-tint hover:text-white hover:bg-dark-tint',
+  className = "border-dark-tint text-dark-tint hover:text-white hover:bg-dark-tint",
   ...props
 }) {
   return (

@@ -7,11 +7,10 @@ import AnimatedHeader from "@/components/ui/AnimatedHeader";
 const LegacySection = () => {
   const quotes = [
     {
-      quote: "Trebor Scholz, who reimagined cooperation in the digital space.",
+      quote: "What is impossible for one individual is possible for many",
     },
     {
-      quote:
-        "José Maria Arizmendiarrieta, who showed that entrepreneurship can be member-owned.",
+      quote: "Help for self-help – an urban concept.",
     },
   ];
   return (
@@ -37,15 +36,44 @@ const LegacySection = () => {
           <QuoteCard key={index} quote={quote.quote} />
         ))}
       </div>
-      <p className="text-gray-700 md:text-xl lg:text-2xl mb-8">
-        We see DigiCoop as the next step in this legacy. By offering audit-proof
-        processes, simple participation channels, and automated workflows, we
-        bring the cooperative idea into practice for the 21st century. For us,
-        the cooperative idea remains what it has always been: a timeless promise
-        that grows stronger through cooperation.
-      </p>
+      {/* Today Section */}
+      <div className="lg:px-[12vw] md:px-8 max-w-[2460px] space-y-3">
+        <h3 className="text-lg md:text-xl lg:text-2xl font-semibold">
+          Today: energy, housing and platform cooperatives
+        </h3>
+        <p className="text-base md:text-lg lg:text-xl font-normal">
+          The idea lives on – locally, digitally, effectively. From energy to
+          housing to platform cooperatives, members pool capital, data,
+          expertise and demand to operate in a resilient and sustainable manner.
+          In doing so, they combine a focus on the common good with professional
+          corporate management – regionally anchored, internationally networked.
+        </p>
+      </div>
 
-      <div className="h-[564px] rounded overflow-hidden ">
+      {/* Why We Choose Section */}
+      <div className="lg:px-[12vw] md:px-8 max-w-[2460px] space-y-3">
+        <h3 className="text-lg md:text-xl lg:text-2xl font-semibold">
+          Why we choose these role models
+        </h3>
+        <p className="text-base md:text-lg lg:text-xl font-normal">
+          They represent self-help, democracy and responsibility — principles we
+          bring into the digital age.
+        </p>
+      </div>
+
+      {/* Bridge to DigiCoop Section */}
+      <div className="lg:px-[12vw] md:px-8 max-w-[2460px] space-y-3">
+        <h3 className="text-lg md:text-xl lg:text-2xl font-semibold">
+          Bridge to DigiCoop
+        </h3>
+        <p className="text-base md:text-lg lg:text-xl font-normal">
+          By combining the cooperative legacy with technology, we ensure that
+          solidarity, transparency, and participation remain relevant and
+          impactful in a digital-first world.
+        </p>
+      </div>
+
+      <div className="h-[564px] rounded overflow-hidden mt-4">
         <img
           src={`${legacyImage}`}
           alt="Team working with sticky notes"
