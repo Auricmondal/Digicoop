@@ -27,17 +27,13 @@ const LegacySection = () => {
         />
       </div>
 
-      <p className="text-base md:text-2xl text-center md:text-start mb-4">
-        The cooperative story is filled with innovators:
-      </p>
-
       <div className="bg-dark-tint text-white rounded-md px-6 py-8 flex flex-col md:flex-row justify-between gap-6 text-center sm:text-left mb-8 md:mb-16">
         {quotes.map((quote, index) => (
           <QuoteCard key={index} quote={quote.quote} />
         ))}
       </div>
       {/* Today Section */}
-      <div className="lg:px-[12vw] md:px-8 max-w-[2460px] space-y-3">
+      <div className="space-y-3">
         <h3 className="text-lg md:text-xl lg:text-2xl font-semibold">
           Today: energy, housing and platform cooperatives
         </h3>
@@ -51,7 +47,7 @@ const LegacySection = () => {
       </div>
 
       {/* Why We Choose Section */}
-      <div className="lg:px-[12vw] md:px-8 max-w-[2460px] space-y-3">
+      <div className="space-y-3">
         <h3 className="text-lg md:text-xl lg:text-2xl font-semibold">
           Why we choose these role models
         </h3>
@@ -62,7 +58,7 @@ const LegacySection = () => {
       </div>
 
       {/* Bridge to DigiCoop Section */}
-      <div className="lg:px-[12vw] md:px-8 max-w-[2460px] space-y-3">
+      <div className=" space-y-3">
         <h3 className="text-lg md:text-xl lg:text-2xl font-semibold">
           Bridge to DigiCoop
         </h3>

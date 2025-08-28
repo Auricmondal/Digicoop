@@ -1,5 +1,6 @@
 import SectionWrapper from "@/layouts/SectionWrapper";
 import AnimatedHeader from "@/components/ui/AnimatedHeader";
+import { useRive } from "@rive-app/react-canvas";
 import {
   ButtonFlippedReveal,
   ButtonOutlineHoverSolid,
@@ -9,6 +10,10 @@ import { Mouse, ArrowRight, ArrowUpRight } from "lucide-react";
 import bgImage from "@/assets/images/solutions-bg.webp";
 
 const SolutionsHero = () => {
+  const { rive, RiveComponent } = useRive({
+    src: "/animations/digicoop.riv",
+    autoplay: true,
+  });
   return (
     <div
       className=""
@@ -66,7 +71,12 @@ const SolutionsHero = () => {
             Scroll Down
           </div>
         </div>
-        <div className="w-[100%] lg:w-[50%] min-h-100 lg:min-h-0"></div>
+        <div className="w-[100%] lg:w-[50%] min-h-100 lg:min-h-0">
+          <RiveComponent
+            className="rive-wrapper min-h-[400px] !h-full w-full flex items-center justify-center"
+            aria-label="Sample Rive Animation"
+          />
+        </div>
       </SectionWrapper>
     </div>
   );

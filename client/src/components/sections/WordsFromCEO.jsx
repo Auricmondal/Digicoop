@@ -28,7 +28,7 @@ const WordsFromCEO = () => {
           process.
         </p>
       </div>
-      <div className="h-[400px] md:h-[593px] bg-custom-neutral-700 mt-10 rounded-lg flex items-center justify-center text-white text-xl">
+      <div className="h-[400px] md:h-[593px] bg-custom-neutral-700 mt-10 rounded-lg flex items-center justify-center text-white text-xl max-w-[1460px] mx-auto">
         <video
           src="https://www.youtube.com/watch?v=QmP9wr_plTA&ab_channel=StartCodingWithMe"
           className="w-full h-full object-cover rounded-lg"
