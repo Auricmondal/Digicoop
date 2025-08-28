@@ -30,7 +30,8 @@ export function SolutionCard({ image, title, subtitle, buttontext }) {
             hoverIcon={
               <ArrowUpRight className="text-primary bg-white rounded-full" />
             }
-            className="bg-tint text-primary-dark rounded-xl w-full h-[64px] border-[2px] flex items-center justify-center font-semibold"
+            className="bg-tint text-primary-dark rounded-xl w-full h-[64px] flex items-center justify-center font-semibold"
+            fullWidth={true}
           >
             {buttontext}
           </ButtonFlippedReveal>
